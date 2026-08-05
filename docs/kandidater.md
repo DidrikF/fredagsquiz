@@ -36,13 +36,10 @@ guess — but the round is still pointless, so don't.
 or the lot? The `unitLabel` field exists for exactly this, but you have to read
 the ad body to know what to put in it. An ambiguous unit makes the round unfair.
 
-**The sound clips are `.ogg`.** Everything from Wikimedia Commons is Ogg Vorbis.
-Chrome, Edge and Firefox play it; Safari is unreliable, and the presenter may
-well be on a Mac. Convert before Friday:
-
-```bash
-for f in public/media/*.ogg; do ffmpeg -i "$f" -b:a 160k "${f%.ogg}.mp3"; done
-```
+**Every sound clip needs work before it is usable.** They are Ogg Vorbis (Safari
+is unreliable, and the presenter is probably on a Mac), they run 18–82 seconds
+when a round wants 6–10, and their levels span 27 dB. One ffmpeg pass fixes all
+three — command and measurements are in the sound section below.
 
 ---
 
@@ -267,155 +264,193 @@ for another from the same series rather than reaching for a different model.
 ---
 ## Gjett lyden — 10 kandidater
 
-Rebuilt: six of the previous ten were giveaways and are gone — måke, islom,
-oppringt modem, dampfløyte, korntørke and bensinpumpe. A seagull is a seagull.
-Four survived, and six harder ones took the empty slots.
+### The rule this set follows
 
-Nine of the ten come from **Work With Sounds**, an EU project that recorded
+**Every answer is a thing people can name.** Difficulty comes from the sound
+being ambiguous out of context — never from the answer being a word you don't
+own. A repslagermaskin is not a hard question, it is an unanswerable one: you
+can't reason toward a noun you've never heard, and the reveal lands as "what?"
+instead of "ohh".
+
+The same goes for the three wrong options. All four have to be things a person
+can picture, or the round degenerates into picking the only familiar word.
+
+That rule cost me most of the previous set. Gone: repslagermaskin, rullemaskin,
+Burroughs regnemaskin, gullvasking med vaskerenne, fjernskriver, trommel,
+bløtleggingshjul. Also reworded two survivors — *melkeorgan* became **melkemaskin**,
+and *glødehodemotor* became **en gammel enstempers båtmotor**, with the technical
+word moved into the reveal where it belongs.
+
+Nine of ten are from **Work With Sounds**, an EU project that recorded
 disappearing workplace sounds. CC BY 4.0, credit "Work With Sounds / Werstas".
-They are ideal here: nothing has a signature everyone knows, so the four options
-do real work.
+All ten were downloaded and measured — durations and levels below are real.
 
-Every link below was fetched and returns 200.
+### Difficulty ladder
 
-### Difficulty, and how to use it
+Sound rounds score binary, 100 or 0. Three of them in a nine-question quiz means
+300 points with no partial credit, so climb rather than open at brutal.
 
-Sound rounds score binary — 100 or 0. With three of them in a nine-question quiz,
-300 points ride on rounds with no partial credit, so a set of three brutal ones
-turns a third of the quiz into a lottery. Build a ladder instead:
+**Anbefalt trio:** #1 Håndmelking → #6 Båtmotoren → #10 Vaskeanlegget.
 
-| | Kandidat | Hvorfor der |
-| --- | --- | --- |
-| **Medium** | 1, 2 | Most people land it once they read the options |
-| **Hard** | 3–6 | Splits the room |
-| **Brutal** | 7–10 | The reveal is the payoff, not the guess |
-
-**Anbefalt trio:** #1 Håndmelking → #5 Glødehodemotor → #7 Vaskeanlegget.
-Opens on theme, peaks on something unmistakably Norwegian, closes on a sound
-from our own industry that nobody will place.
+🔴 **I cannot hear these files.** The grades below are inferred from what the
+object is and how distinctive it should be — not from listening. Play all ten
+before you lock the ladder; expect to move at least one.
 
 ---
 
 ## Medium
 
-### 1. Håndmelking ✅ — CC BY 4.0
+### 1. Håndmelking ✅ — CC BY 4.0 · 75 s · snitt −34 dB
 
-Milk hitting a metal pail, in rhythm. The theme question, and the only one of the
-four options that could make that particular sound.
+Milk hitting a metal pail, in rhythm. Everyone knows what hand milking is, and
+it's the only one of the four options that could make that particular sound.
 
-> [WWS_Handmilking.ogg](https://upload.wikimedia.org/wikipedia/commons/9/91/WWS_Handmilking.ogg) · 984 KB
+> [WWS_Handmilking.ogg](https://upload.wikimedia.org/wikipedia/commons/9/91/WWS_Handmilking.ogg)
 > **options:** `['Regn på et blikktak', 'Håndmelking av ei ku', 'Noen som vasker opp', 'En kaffetrakter som brygger']` → **1**
-> **note:** «Håndmelking. Omtrent 1,5 liter i minuttet hvis du er god. Et melkeorgan tar fire spener samtidig og bryr seg ikke om at du er god.»
+> **note:** «Håndmelking. Rundt 1,5 liter i minuttet hvis du er god. En melkemaskin tar fire spener samtidig og bryr seg ikke om at du er god.»
 
-### 2. Fôrvogn ✅ — CC BY 4.0
+### 2. Bagasjebåndet på flyplassen ✅ — CC BY 4.0 · 60 s · snitt −20 dB
 
-Rail-mounted feed wagon down the length of a barn. Motor plus rolling metal.
+Everyone has stood at one. Nobody has ever listened to one on purpose.
 
-> [WWS_Feedwagon.ogg](https://upload.wikimedia.org/wikipedia/commons/c/ca/WWS_Feedwagon.ogg) · 170 KB
-> **options:** `['En fôrvogn i fjøset', 'En skiheis', 'Et transportbånd på flyplassen', 'En snøfreser']` → **0**
+> [WWS_Luggagebeltinwaitinghall.ogg](https://upload.wikimedia.org/wikipedia/commons/d/d1/WWS_Luggagebeltinwaitinghall.ogg)
+> **options:** `['Bagasjebåndet på flyplassen', 'En gressklipper', 'En oppvaskmaskin', 'En rulletrapp']` → **0**
 
 ---
 
 ## Hard
 
-### 3. Melkeorgan ✅ — CC BY 4.0
+### 3. Melkemaskin ✅ — CC BY 4.0 · 43 s · snitt −27 dB
 
-The pulsating vacuum of a milking cluster. Half the room has stood next to one
-and still will not place it out of context.
+The pulsing vacuum of a milking cluster. Half the room has stood next to one and
+still won't place it cold.
 
-> [WWS_Milkingunit.ogg](https://upload.wikimedia.org/wikipedia/commons/6/61/WWS_Milkingunit.ogg) · 408 KB
-> **options:** `['En respirator', 'Et melkeorgan i fjøset', 'En gammel oljekjele', 'En luftpumpe på bensinstasjonen']` → **1**
+> [WWS_Milkingunit.ogg](https://upload.wikimedia.org/wikipedia/commons/6/61/WWS_Milkingunit.ogg)
+> **options:** `['En respirator', 'En melkemaskin i fjøset', 'En gammel oljekjele', 'En luftpumpe på bensinstasjonen']` → **1**
 
-### 4. Fjernskriver ✅ — CC BY 4.0
+### 4. Rulletrapp ✅ — CC BY 4.0 · 40 s · snitt −19 dB
 
-A mechanical teleprinter at speed. Sounds like a typewriter being fired from a
-machine gun.
+You ride one every week and could not describe the sound to save your life.
 
-> [WWS_Teleprintertyping.ogg](https://upload.wikimedia.org/wikipedia/commons/4/46/WWS_Teleprintertyping.ogg) · 1,4 MB
-> **options:** `['En symaskin', 'En fjernskriver', 'En vevstol', 'En billettautomat']` → **1**
+> [WWS_Escalator.ogg](https://upload.wikimedia.org/wikipedia/commons/5/53/WWS_Escalator.ogg)
+> **options:** `['En rulletrapp', 'En heis', 'Et tog som bremser inn', 'En vaskemaskin']` → **0**
 
-### 5. Glødehodemotor ✅ — CC BY 4.0
+### 5. Oppskjærmaskin ✅ — CC BY 4.0 · 22 s · snitt −10 dB
 
-The slow, heavy *tøff–tøff–tøff* of a semidiesel through the exhaust pipe. The
-sound of the Norwegian coast for fifty years, and the one on this list most
-likely to make someone's father text them about it afterwards.
+The deli slicer. Everyone has waited behind one at the meat counter.
 
-> [WWS_Hotbulbengineexhaustpipe.ogg](https://upload.wikimedia.org/wikipedia/commons/7/7c/WWS_Hotbulbengineexhaustpipe.ogg) · 600 KB
-> **options:** `['Et damplokomotiv som står stille', 'En glødehodemotor i en gammel skøyte', 'En hjullaster på tomgang', 'En vedkløyver']` → **1**
-> **note:** «En glødehodemotor — semidiesel. Du varmer opp toppen med blåselampe før start, og så går den til den går tom. Den lyden var Norskekysten i femti år.»
-> There is a longer, richer 5 MB recording of a Storebro engine as an alternative: [WWS_Storebrohotbulbengine.ogg](https://upload.wikimedia.org/wikipedia/commons/d/df/WWS_Storebrohotbulbengine.ogg)
+> [WWS_Meatslicer.ogg](https://upload.wikimedia.org/wikipedia/commons/c/cb/WWS_Meatslicer.ogg)
+> **options:** `['En oppskjærmaskin hos slakteren', 'En brødrister', 'En kopimaskin', 'En elektrisk hekksaks']` → **0**
+> 🔴 This is the loudest clip of the ten by a wide margin and already peaks at
+> 0 dB. Normalise it or it will be the one that makes people jump.
 
-### 6. Rullemaskin ✅ — CC BY 4.0
+### 6. Gammel enstempers båtmotor ✅ — CC BY 4.0 · 50 s · snitt −20 dB
 
-A box mangle — a stone-weighted wooden chest rolled over linen. Deep wooden
-rumble with a turn at each end.
+The slow, heavy *tøff–tøff–tøff* through the exhaust pipe. Anyone who has been
+near the coast has heard it, and "gammel båtmotor" is something you can name
+even if "glødehodemotor" isn't.
 
-> [WWS_Boxmangle.ogg](https://upload.wikimedia.org/wikipedia/commons/7/77/WWS_Boxmangle.ogg) · 1,7 MB
-> **options:** `['En rullemaskin for sengetøy', 'En trebåt som gynger mot brygga', 'En gammel heis', 'Et kjegleoppsett i en bowlinghall']` → **0**
+> [WWS_Hotbulbengineexhaustpipe.ogg](https://upload.wikimedia.org/wikipedia/commons/7/7c/WWS_Hotbulbengineexhaustpipe.ogg)
+> **options:** `['Et damplokomotiv som står stille', 'En gammel enstempers båtmotor', 'En hjullaster på tomgang', 'En vedkløyver']` → **1**
+> **note:** «En gammel enstempers båtmotor — glødehode, eller semidiesel. Du varmet opp toppen med blåselampe før start, og så gikk den til den gikk tom. Den lyden var Norskekysten i femti år.»
 
 ---
 
 ## Brutal
 
-### 7. Vaskeanlegget til et melkeanlegg ✅ — CC BY 4.0
+Still nameable — the difficulty is that the sound gives almost nothing away, and
+every wrong option is something that plausibly makes the same noise.
 
-The wash cycle that runs after every milking. Brutal by construction: all four
-options are something rinsing itself, so nobody can shortcut it by category.
-Best closer on the list — the reveal is "this runs in our own plants, twice a
-day, and none of you knew what it sounded like".
+### 7. Gulvvaskemaskinen på kjøpesenteret ✅ — CC BY 4.0 · 69 s · snitt −23 dB
 
-> [WWS_MilkingMachineCleaningUnit.ogg](https://upload.wikimedia.org/wikipedia/commons/5/55/WWS_MilkingMachineCleaningUnit.ogg) · 770 KB
-> **options:** `['En oppvaskmaskin på et storkjøkken', 'Vaskeanlegget til et melkeanlegg', 'En kaffemaskin som renser seg', 'En vaskemaskin på sentrifuge']` → **1**
+The ride-on floor scrubber. Instantly recognisable by sight, completely
+anonymous by ear — and all four options are motor-plus-brushes.
 
-### 8. Repslagermaskin ✅ — CC BY 4.0
+> [WWS_Automaticscrubberdrier.ogg](https://upload.wikimedia.org/wikipedia/commons/0/09/WWS_Automaticscrubberdrier.ogg)
+> **options:** `['En gulvvaskemaskin på et kjøpesenter', 'En støvsuger', 'En gressklipper', 'En snøfreser']` → **0**
 
-Rope being laid up. Rhythmic, stranded, completely unplaceable.
+### 8. Eltemaskinen hos bakeren ✅ — CC BY 4.0 · 27 s · snitt −21 dB
 
-> [WWS_Ropemakingmachine.ogg](https://upload.wikimedia.org/wikipedia/commons/c/c0/WWS_Ropemakingmachine.ogg) · 1,5 MB
-> **options:** `['En repslagermaskin', 'En garnvinde på en fabrikk', 'Et karusellmaskineri på tivoli', 'En gammel filmfremviser']` → **0**
+Dough in a spiral mixer. Wet, heavy, slapping — and so is a cement mixer.
 
-### 9. Gullvasking med vaskerenne ✅ — CC BY 4.0
+> [WWS_Doughmixer.ogg](https://upload.wikimedia.org/wikipedia/commons/8/82/WWS_Doughmixer.ogg)
+> **options:** `['En eltemaskin hos bakeren', 'En sementblander', 'En oppvaskmaskin', 'En vaskemaskin med skjev last']` → **0**
 
-Water and gravel through a sluice box. Option A is *nearly* right, which is the
-whole point.
+### 9. Kassaapparat ✅ — CC BY 4.0 · 19 s · snitt −37 dB
 
-> [WWS_Goldprospectorwithasluicebox.ogg](https://upload.wikimedia.org/wikipedia/commons/7/7e/WWS_Goldprospectorwithasluicebox.ogg) · 594 KB
-> **options:** `['En bekk over stein', 'En gullvasker med vaskerenne', 'Grus som tippes av et lasteplan', 'En betongblander']` → **1**
+Keys, beeps, drawer. Everyone knows a till; nobody can separate it from the
+three other machines that beep at you in a shop.
 
-### 10. Mekanisk regnemaskin ✅ — CC BY 4.0
+> [WWS_Electroniccashregister.ogg](https://upload.wikimedia.org/wikipedia/commons/e/e4/WWS_Electroniccashregister.ogg)
+> **options:** `['Et kassaapparat', 'En billettautomat', 'En kopimaskin', 'En stemplingsklokke']` → **0**
+> 🔴 Quietest clip of the ten — 27 dB below the slicer. Unusable in a room
+> without normalising first.
 
-A Burroughs adding machine: key clatter, then the lever. Against a cash register
-and a time clock, which sound almost identical, because they are almost the same
-machine.
+### 10. Vaskeanlegget som spyler melkeanlegget rent ✅ — CC BY 4.0 · 82 s · snitt −22 dB
 
-> [WWS_Burroughsaccountingmachine.ogg](https://upload.wikimedia.org/wikipedia/commons/7/73/WWS_Burroughsaccountingmachine.ogg) · 407 KB
-> **options:** `['En mekanisk regnemaskin', 'Et gammelt kassaapparat', 'Et stemplingsur', 'En manuell skrivemaskin']` → **0**
+The wash cycle that runs after every milking. Described in plain words rather
+than jargon, so it is guessable — and brutal because all four options are
+something rinsing itself. The best closer here: the reveal is "this runs in our
+own plants twice a day and none of you knew what it sounded like."
+
+> [WWS_MilkingMachineCleaningUnit.ogg](https://upload.wikimedia.org/wikipedia/commons/5/55/WWS_MilkingMachineCleaningUnit.ogg)
+> **options:** `['En oppvaskmaskin på et storkjøkken', 'Vaskeanlegget som spyler melkeanlegget rent', 'En kaffemaskin som renser seg', 'En vaskemaskin på sentrifuge']` → **1**
 
 ---
 
-### Reserve bench, all verified links
+### Two things every clip needs before Friday
 
-Harder than the ones I cut, easier than the brutal four.
+**They are all far too long.** Measured: 18 to 82 seconds, average 47. A quiz
+round wants 6–10 seconds — long enough to hear the character, short enough that
+the room doesn't start talking. Trim to the most characteristic stretch, which
+is rarely the first seconds.
 
-| Lyd | Fil | Lisens | Nivå |
-| --- | --- | --- | --- |
-| Melkemottak | [WWS_MilkReceiver.ogg](https://upload.wikimedia.org/wikipedia/commons/9/93/WWS_MilkReceiver.ogg) | CC BY 4.0 | hard |
-| Traktormotor (Ursus C342) | [WWS_TractorUrsusC342engine.ogg](https://upload.wikimedia.org/wikipedia/commons/f/ff/WWS_TractorUrsusC342engine.ogg) | CC BY 4.0 | medium |
-| Trommel for polering | [WWS_Tumblingbarrel.ogg](https://upload.wikimedia.org/wikipedia/commons/c/c3/WWS_Tumblingbarrel.ogg) | CC BY 4.0 | brutal |
-| Bløtleggingshjul | [WWS_Soakingwheel.ogg](https://upload.wikimedia.org/wikipedia/commons/b/be/WWS_Soakingwheel.ogg) | CC BY 4.0 | brutal |
-| Vannhjul | [WWS_Waterwheel.ogg](https://upload.wikimedia.org/wikipedia/commons/9/96/WWS_Waterwheel.ogg) | CC BY 4.0 | hard |
-| Korntørke | [WWS_Graindryer.ogg](https://upload.wikimedia.org/wikipedia/commons/e/ec/WWS_Graindryer.ogg) | CC BY 4.0 | medium |
-| Iskrembil | [WWS_HomeIceCreamvan.ogg](https://upload.wikimedia.org/wikipedia/commons/8/8b/WWS_HomeIceCreamvan.ogg) | CC BY 4.0 | medium |
-| Ku som rauter | [Single_Cow_Moo.ogg](https://upload.wikimedia.org/wikipedia/commons/a/a5/Single_Cow_Moo.ogg) | CC BY-SA 4.0 | for lett |
-| Bjeller på beite | [Cowbells_on_Monte_Baldo.ogg](https://upload.wikimedia.org/wikipedia/commons/8/8f/Cowbells_on_Monte_Baldo.ogg) | CC BY-SA 4.0 | for lett |
+**The levels are wildly uneven.** Mean volume across the ten spans **27 dB**,
+from the cash register at −37 dB to the meat slicer at −10 dB. Play them back to
+back untouched and half are inaudible while the rest make people flinch. The
+slicer already peaks at 0 dB.
+
+One pass fixes both. Trimming and loudness-normalising to broadcast level, then
+out as mp3 so Safari plays it:
+
+```bash
+ffmpeg -ss 00:00:12 -t 8 -i WWS_Handmilking.ogg \
+  -af "loudnorm=I=-16:TP=-1.5:LRA=11" -b:a 160k public/media/klipp-01.mp3
+```
+
+I ran that on the three extremes to check it works: the cash register went from
+−37 dB to −21.6, the slicer from −10.3 to −17.4, hand milking from −34.0 to
+−22.1. A 27 dB spread becomes about 5.
+
+### Reserve bench, all verified and measured
+
+Same rule — nameable things only.
+
+| Lyd | Fil | Lengde | Snitt | Nivå |
+| --- | --- | --- | --- | --- |
+| Fôrvogn i fjøset | [WWS_Feedwagon.ogg](https://upload.wikimedia.org/wikipedia/commons/c/ca/WWS_Feedwagon.ogg) | 17 s | −21 dB | medium |
+| Melkemottak | [WWS_MilkReceiver.ogg](https://upload.wikimedia.org/wikipedia/commons/9/93/WWS_MilkReceiver.ogg) | — | — | hard |
+| Traktormotor | [WWS_TractorUrsusC342engine.ogg](https://upload.wikimedia.org/wikipedia/commons/f/ff/WWS_TractorUrsusC342engine.ogg) | — | — | medium |
+| Båndsag | [WWS_Bandsaw.ogg](https://upload.wikimedia.org/wikipedia/commons/4/48/WWS_Bandsaw.ogg) | — | — | hard |
+| Brannbilsirene | [WWS_Fireenginesiren.ogg](https://upload.wikimedia.org/wikipedia/commons/4/47/WWS_Fireenginesiren.ogg) | — | — | for lett |
+| Iskrembil | [WWS_HomeIceCreamvan.ogg](https://upload.wikimedia.org/wikipedia/commons/8/8b/WWS_HomeIceCreamvan.ogg) | — | — | medium |
+| Korntørke | [WWS_Graindryer.ogg](https://upload.wikimedia.org/wikipedia/commons/e/ec/WWS_Graindryer.ogg) | — | — | for generisk |
 
 ### Cut, and why
 
-Måke, islom, oppringt modem, dampfløyte, korntørke, bensinpumpe. The first three
-are instantly recognisable to anyone who has been outdoors or online. The steam
-whistle had three distractors that were all defensibly correct, which is unfair
-rather than hard. The grain dryer and the fuel pump are just fans and liquid —
-too generic to have a right answer worth arguing about.
+**Unnameable** — you can't guess a word you don't have: repslagermaskin,
+rullemaskin, Burroughs regnemaskin, bløtleggingshjul, poleringstrommel,
+gullvasking med vaskerenne. Fjernskriver went the same way; telex is a knowable
+thing if you're over sixty and nothing at all if you're not.
+
+**Too easy** — a seagull is a seagull: måke, islom, oppringt modem, brannbilsirene.
+
+**Unfair rather than hard** — dampfløyta had three distractors that were all
+defensibly correct.
+
+**Too generic to argue about** — korntørke and bensinpumpe are a fan and a
+liquid.
+
 ---
 
 ## Et forslag til de ni
@@ -431,10 +466,10 @@ whole joke is that the caravan costs four times the house.
 | 3 | Lyd | Håndmelking · *medium* | — |
 | 4 | År | Litago | 1994 |
 | 5 | Pris | Utstoppet elghode | 3 000 kr |
-| 6 | Lyd | Glødehodemotor · *hard* | — |
+| 6 | Lyd | Gammel enstempers båtmotor · *hard* | — |
 | 7 | År | Navnet TINE | 1992 |
 | 8 | Pris | Hytta i Leksvik | 100 000 kr |
-| 9 | Lyd | Vaskeanlegget til et melkeanlegg · *brutal* | — |
+| 9 | Lyd | Vaskeanlegget som spyler melkeanlegget rent · *brutal* | — |
 
 Two house questions, one tractor, two "billigere enn du tror", and a sound
 ladder that ends on our own industry. If you want the caravan in as well, swap

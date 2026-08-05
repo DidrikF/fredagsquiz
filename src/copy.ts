@@ -105,6 +105,9 @@ export const copy = {
     answerLabel: 'Svar',
     optionsLabel: 'Alternativer',
     print: 'Skriv ut',
+    noPhoto: 'Uten bilde',
+    noClip: 'Uten lydfil',
+    openFile: 'Åpne filen i full størrelse',
   },
 
   reset: {

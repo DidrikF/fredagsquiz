@@ -42,10 +42,15 @@ locked itself during question six — lands exactly where it left off.
 
 ## Authoring the quiz
 
-Everything is in [`src/data/questions.ts`](src/data/questions.ts). Nine
-questions, three of each kind, alternating year → price → sound. The count is
-data driven: the maximum score is `questions.length × 100`, so adding a tenth
-question needs no other change.
+Everything is in [`src/data/questions.ts`](src/data/questions.ts).
+
+**Right now it holds 30 candidates** — ten of each kind, alternating year →
+price → sound — so the whole set can be played through on a screen before the
+final nine are chosen. Delete the ones you don't want and everything follows:
+the maximum score is `questions.length × 100`, and the progress label, emoji
+strip and Slack summary all recount themselves. The research behind each
+candidate, with sources and verification status, is in
+[`docs/kandidater.md`](docs/kandidater.md).
 
 ```ts
 { kind: 'year',  prompt, photoHint, photo?, min, max, answer, note, source? }
@@ -61,9 +66,26 @@ question needs no other change.
 - `note` is the one line read aloud at reveal. `source` is optional and shows
   as a link on the reveal screen and the results card.
 
-Media goes in [`public/media/`](public/media/) and is referenced by file name —
-see the README in that folder. A question without a file still works: the photo
-becomes a placeholder block and the play button simulates a three second clip.
+Media goes in [`public/media/`](public/media/) and is referenced by file name. A
+question without a file still works: the photo becomes a placeholder block and
+the play button simulates a three second clip.
+
+Every asset currently in the repo came from Wikimedia Commons via
+[`scripts/fetch-media.mjs`](scripts/fetch-media.mjs), which downloads them,
+downscales the photos, trims each clip to eight seconds, loudness-normalises it
+to broadcast level and converts it to mp3 — the originals run 18–82 seconds and
+their levels span 27 dB, which would have made half of them inaudible in a room.
+Re-run it any time with `node scripts/fetch-media.mjs` (needs ffmpeg).
+
+Attribution for every file is in
+[`public/media/CREDITS.md`](public/media/CREDITS.md). Several are CC BY or
+CC BY-SA, which require credit where the work is used — put the line from that
+file on a closing slide or in the Slack thread.
+
+Two things to know about the photos on the **price** rounds: they are
+illustrasjonsfoto, not the sellers' own pictures, because FINN listing photos
+belong to the sellers and this site is public. Each caption says so. If you'd
+rather show the real listing photos, keep the page off the public web.
 
 Every interface string lives in [`src/copy.ts`](src/copy.ts), so translating
 the quiz means editing one document.

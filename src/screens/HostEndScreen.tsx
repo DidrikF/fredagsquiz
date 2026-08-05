@@ -30,6 +30,13 @@ export function HostEndScreen({ dispatch }: Props) {
         <button
           type="button"
           className="btn btn-ghost btn-link"
+          onClick={() => dispatch({ type: 'openFacit' })}
+        >
+          {copy.facit.open}
+        </button>
+        <button
+          type="button"
+          className="btn btn-ghost btn-link"
           onClick={() => dispatch({ type: 'exitPresenter' })}
         >
           {copy.host.exit}

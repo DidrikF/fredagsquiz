@@ -96,6 +96,24 @@ export const copy = {
     source: 'Kilde ↗',
   },
 
+  facit: {
+    open: 'Se hele fasiten',
+    title: 'Fasit',
+    lede: (count: number) =>
+      `Alle ${count} spørsmålene med svar, forklaring og kilde. Denne siden finnes bare i programledermodus — ikke vis den på storskjerm.`,
+    back: '← Tilbake til spørsmålene',
+    answerLabel: 'Svar',
+    optionsLabel: 'Alternativer',
+    print: 'Skriv ut',
+  },
+
+  reset: {
+    open: 'Nullstill',
+    confirm: 'Trykk igjen for å slette',
+    cancel: 'Avbryt',
+    hint: 'Sletter navn og alle svar på denne enheten.',
+  },
+
   waiting: {
     mark: '✓',
     title: (count: number) => `Alle ${numberWord(count)} er levert`,

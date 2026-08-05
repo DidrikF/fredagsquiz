@@ -1,0 +1,423 @@
+- generic [active] [ref=e1]:
+  - link "Gå til annonsen" [ref=e2] [cursor=pointer]:
+    - /url: "#ad-start-link"
+  - banner [ref=e5]:
+    - img "FINN.no logoen viser navnet FINN skrevet med hvit skrift i et lyseblått rektangel til høyre for en mørkeblå kvartsirkel."
+    - navigation "Topp" [ref=e6]:
+      - link "Forside" [ref=e7] [cursor=pointer]:
+        - /url: //www.finn.no
+        - generic [ref=e9]:
+          - img "FINN.no"
+      - link "For bedrifter" [ref=e10] [cursor=pointer]:
+        - /url: //www.finn.no/business
+        - img "Leilighetsbygg" [ref=e12]
+      - link "Varslinger" [ref=e16] [cursor=pointer]:
+        - /url: //www.finn.no/notifications
+        - img "Bjelle" [ref=e18]
+      - link "Ny annonse" [ref=e21] [cursor=pointer]:
+        - /url: //www.finn.no/create-item/start
+        - img "Sirkel med plusstegn" [ref=e23]
+      - link "Meldinger" [ref=e26] [cursor=pointer]:
+        - /url: //www.finn.no/messages
+        - generic [ref=e28]:
+          - img "Snakkebobler" [ref=e30]
+          - generic [ref=e33]: Meldinger
+          - status [ref=e34]
+      - link "Logg inn" [ref=e35] [cursor=pointer]:
+        - /url: //www.finn.no/auth/login
+        - img "Sirkel med brukerprofil" [ref=e38]
+  - main [ref=e46]:
+    - navigation [ref=e49]:
+      - heading "Du er her" [level=2] [ref=e50]
+      - generic [ref=e51]:
+        - link "Nyttekjøretøy og maskiner" [ref=e52] [cursor=pointer]:
+          - /url: /mobility/browse/b2b
+        - generic [ref=e53]: /
+        - link "Traktorer" [ref=e54] [cursor=pointer]:
+          - /url: /mobility/search/b2b/agriculturetractor
+        - generic [ref=e55]: /
+        - link "Massey Ferguson" [ref=e56] [cursor=pointer]:
+          - /url: /mobility/search/b2b/agriculturetractor?make=0.40
+    - generic [ref=e57]:
+      - generic [ref=e59]:
+        - heading "Bildegalleri" [level=2] [ref=e60]
+        - generic:
+          - generic "Gå til forrige bilde" [ref=e61]:
+            - button [ref=e62] [cursor=pointer]:
+              - generic [ref=e64]:
+                - img "Pil som peker mot venstre"
+          - generic "Gå til neste bilde" [ref=e65]:
+            - button [ref=e66] [cursor=pointer]:
+              - generic [ref=e68]:
+                - img "Pil som peker mot høyre"
+        - status "Bilde 1 av 16" [ref=e70]: (1/16)
+        - button "Åpne fullskjerm bildevisning" [ref=e71] [cursor=pointer]:
+          - list "Bilde 1 av 16" [ref=e72]:
+            - listitem [ref=e73]:
+              - img "Annonsebilde_ 1" [ref=e74]
+            - listitem [ref=e76]:
+              - img "Annonsebilde_ 2" [ref=e77]
+            - listitem [ref=e79]:
+              - img "Annonsebilde_ 3" [ref=e80]
+            - listitem [ref=e82]:
+              - img "Annonsebilde_ 4" [ref=e83]
+            - listitem [ref=e85]:
+              - img "Annonsebilde_ 5" [ref=e86]
+            - listitem [ref=e88]:
+              - img "Annonsebilde_ 6" [ref=e89]
+            - listitem [ref=e91]:
+              - img "Annonsebilde_ 7" [ref=e92]
+            - listitem [ref=e94]:
+              - img "Annonsebilde_ 8" [ref=e95]
+            - listitem [ref=e97]:
+              - img "Annonsebilde_ 9" [ref=e98]
+            - listitem [ref=e100]:
+              - img "Annonsebilde_ 10" [ref=e101]
+            - listitem [ref=e103]:
+              - img "Annonsebilde_ 11" [ref=e104]
+            - listitem [ref=e106]:
+              - img "Annonsebilde_ 12" [ref=e107]
+            - listitem [ref=e109]:
+              - img "Annonsebilde_ 13" [ref=e110]
+            - listitem [ref=e112]:
+              - img "Annonsebilde_ 14" [ref=e113]
+            - listitem [ref=e115]:
+              - img "Annonsebilde_ 15" [ref=e116]
+            - listitem [ref=e118]:
+              - img "Annonsebilde_ 16" [ref=e119]
+      - generic [ref=e121]:
+        - button "9 Legg til som favoritt. Ikon med hjerteomriss" [ref=e122] [cursor=pointer]:
+          - generic [ref=e123]: "9"
+          - generic [ref=e124]: Legg til som favoritt.
+          - img "Ikon med hjerteomriss"
+        - generic "Del annonsen" [ref=e125]:
+          - button [ref=e126] [cursor=pointer]:
+            - generic [ref=e128]:
+              - img "Buet pil som peker mot høyre"
+        - link "Porsgrunn" [ref=e130] [cursor=pointer]:
+          - /url: https://www.finn.no/map?adId=472181593&lat=59.13270037706109&lon=9.66809316823903&zoom=12&postalCode=3917
+      - generic [ref=e131]:
+        - generic [ref=e132]:
+          - heading "Massey Ferguson MF135" [level=1] [ref=e133]
+          - generic [ref=e134]:
+            - generic [ref=e135]:
+              - generic [ref=e138]:
+                - img "Kalender"
+              - generic [ref=e139]:
+                - text: Modellår
+                - paragraph [ref=e140]: "1971"
+            - generic [ref=e141]:
+              - generic [ref=e144]:
+                - img "Vekt med bokstavene KG inni"
+              - generic [ref=e145]:
+                - text: Vekt
+                - paragraph [ref=e146]: Ikke oppgitt
+            - generic [ref=e147]:
+              - generic [ref=e150]:
+                - img "Motor"
+              - generic [ref=e151]:
+                - text: Effekt
+                - paragraph [ref=e152]: Ikke oppgitt
+            - generic [ref=e153]:
+              - generic [ref=e156]:
+                - img "Klokke"
+              - generic [ref=e157]:
+                - text: Arbeidstimer
+                - paragraph [ref=e158]: Ikke oppgitt
+          - generic [ref=e160]:
+            - paragraph [ref=e161]: Pris
+            - heading "51 000 kr (inkl. mva.)" [level=2] [ref=e162]:
+              - text: 51 000 kr
+              - generic [ref=e163]: (inkl. mva.)
+        - generic [ref=e164]:
+          - generic [ref=e165]:
+            - heading "Kontakt selgeren" [level=2] [ref=e166]
+            - paragraph [ref=e167]: Få mer informasjon om kjøretøyet eller avtal prøvekjøring.
+            - link "Send melding" [ref=e173] [cursor=pointer]:
+              - /url: /auth/login?redirectUrl=https%3A%2F%2Fwww.finn.no%2Fmessages%2Fnew%2F472181593&cancelUrl=https%3A%2F%2Fwww.finn.no%2F472181593
+          - generic [ref=e175]:
+            - heading "Brukerprofil" [level=2] [ref=e176]
+            - generic [ref=e178]:
+              - generic [ref=e179]:
+                - img "Standard profilbilde."
+              - generic [ref=e180]:
+                - paragraph [ref=e181]: Du må være logget inn for å se brukerprofiler og sende meldinger.
+                - button "Logg inn" [ref=e182] [cursor=pointer]
+          - generic:
+            - generic:
+              - generic: Registrer deg her
+              - generic: Jeg samtykker til lagring av min innsendte informasjon, slik at jeg kan kontaktes
+              - generic: Registrer meg
+        - generic [ref=e183]:
+          - region "Lån og forsikring" [ref=e186]:
+            - paragraph [ref=e188]:
+              - link "Pris på forsikring" [ref=e189] [cursor=pointer]:
+                - /url: https://www.finn.no/finance/marketplace/insurance/472181593
+          - generic [ref=e191]:
+            - heading "Beskrivelse" [level=2] [ref=e192]
+            - generic [ref=e193]: Selger en go 135 som det er gjort noe med. Denne fungerer flott å blitt brukt som brøyte traktor her i mitt eie. Tidligere har den gått på hoff sagbruk. Selges kun for at jeg har nye prosjekter pågang. Byttet til ny radiator. Satt på nye lys pluss leddbjelkeByttet en sylinder til servoOverhaling av pumpe ved rattstammenMontert toveis ventil for hydraulisk styring foran og bakFølger med to brøyteskjærEn lita skuffeKan følge med to skjærs plogDet som må gjøres Ny bakruteBruker litt oljeSvetter litt servooljeLekker litt kjølevæske ikke mye må bytte slangeklemme bare. Denne starter og går umiddelbart alltid. Selges for 51000 men er åpen for budRing meg gjerne for mer info eller hvis du lurer på noe. 91665454
+            - button "Pluss tegn Vis hele beskrivelsen" [ref=e198] [cursor=pointer]:
+              - generic [ref=e199]:
+                - generic [ref=e201]:
+                  - img "Pluss tegn"
+                - generic [ref=e202]: Vis hele beskrivelsen
+          - generic [ref=e203]:
+            - heading "Spesifikasjoner" [level=2] [ref=e204]
+            - generic [ref=e205]:
+              - generic [ref=e206]:
+                - term [ref=e207]: Merke
+                - definition [ref=e208]: Massey Ferguson
+              - generic [ref=e209]:
+                - term [ref=e210]: Modell
+                - definition [ref=e211]: MF135
+              - generic [ref=e212]:
+                - term [ref=e213]: Modellår
+                - definition [ref=e214]: "1971"
+              - generic [ref=e215]:
+                - term [ref=e216]: Fordekk
+                - definition [ref=e217]: Noe sprukket
+              - generic [ref=e218]:
+                - term [ref=e219]: Bakdekk
+                - definition [ref=e220]: Noe sprukket
+          - generic [ref=e221]:
+            - heading "Utstyr" [level=2] [ref=e222]
+            - list [ref=e223]:
+              - listitem [ref=e224]: Brakett og hydraulikksentral for frontlaster
+              - listitem [ref=e225]: Komplett frontlaster
+          - generic [ref=e226]:
+            - heading "Reklamasjonsrett ved kjøp fra privatperson" [level=2] [ref=e227]
+            - paragraph [ref=e228]: Normalt gjelder 2 års reklamasjonsfrist mot skjulte feil og mangler. Reklamasjonsretten brukes hvis produktet er i dårligere stand enn det du hadde grunn til å forvente, basert på informasjon du har fått fra selger. Vær oppmerksom på at begge parter kan fraskrive seg reklamasjonsretten dersom dette er tydelig spesifisert i en kjøpekontrakt.
+            - paragraph [ref=e229]:
+              - link "Les mer om reklamasjonsrett på FINNs hjelpesenter." [ref=e230] [cursor=pointer]:
+                - /url: https://hjelpesenter.finn.no/hc/no/articles/22604768543762-Reklamasjonsrett-ved-kj%C3%B8p-og-salg-av-bil
+            - heading "Uavhengig tvisteløsning" [level=2] [ref=e231]
+            - paragraph [ref=e232]: Vår partner Mekle tilbyr digital tvisteløsning hvor begge parter i en reklamasjonssak får hjelp av en jurist til å finne en rimelig løsning.
+            - link "Les mer om Mekle her" [ref=e233] [cursor=pointer]:
+              - /url: https://hjelpesenter.finn.no/hc/no/articles/22604768543762-Reklamasjonsrett-ved-kj%C3%B8p-og-salg-av-motorvogn#h_01JZWCTVNYJEMK4BKP9TZF39K8
+          - generic [ref=e234]:
+            - heading "Sted" [level=2] [ref=e235]
+            - generic [ref=e236]:
+              - generic [ref=e238]:
+                - img "Kartnål"
+              - link "3917 Porsgrunn" [ref=e241] [cursor=pointer]:
+                - /url: https://www.finn.no/map?adId=472181593&lat=59.13270037706109&lon=9.66809316823903&zoom=12&postalCode=3917
+            - link [ref=e243] [cursor=pointer]:
+              - /url: https://www.finn.no/map?adId=472181593&lat=59.13270037706109&lon=9.66809316823903&zoom=12&postalCode=3917
+              - img "Kart" [ref=e244]
+        - generic [ref=e246]:
+          - generic [ref=e247]:
+            - heading "Annonseinformasjon" [level=2] [ref=e248]
+            - generic [ref=e249]:
+              - generic [ref=e250]:
+                - paragraph [ref=e251]: FINN-kode
+                - paragraph [ref=e252]: "472181593"
+              - generic [ref=e253]:
+                - paragraph [ref=e254]: Sist oppdatert
+                - paragraph [ref=e255]: 5. august 2026, 19:49
+            - generic [ref=e256]:
+              - button [ref=e259] [cursor=pointer]:
+                - generic [ref=e260]:
+                  - generic [ref=e262]:
+                    - img "Buet pil som peker mot høyre"
+                  - text: Del annonsen
+              - paragraph [ref=e263]:
+                - link "Rapporter annonse" [ref=e264] [cursor=pointer]:
+                  - /url: /report/ad?adId=472181593
+          - paragraph [ref=e266]: Annonsen kan være mangelfull. Fullstendig salgsinformasjon og opplysninger iht. opplysningsplikt kan fås direkte fra selger.
+          - link "Massey Ferguson" [ref=e269] [cursor=pointer]:
+            - /url: https://www.finn.no/mobility/search/b2b/agriculturetractor?make=0.40
+          - generic [ref=e272]:
+            - generic "Close" [ref=e273]:
+              - button [ref=e274] [cursor=pointer]:
+                - generic [ref=e276]:
+                  - img "X"
+            - heading "Fant du det du lette etter?" [level=2] [ref=e277]
+            - generic [ref=e278]:
+              - button [ref=e280] [cursor=pointer]:
+                - generic [ref=e281]:
+                  - generic [ref=e283]:
+                    - img "Tommel som peker opp"
+                  - text: Ja
+              - button [ref=e285] [cursor=pointer]:
+                - generic [ref=e286]:
+                  - generic [ref=e288]:
+                    - img "Tommel som peker ned"
+                  - text: Nei
+    - generic [ref=e291]:
+      - heading "Mer som dette" [level=2] [ref=e292]
+      - generic [ref=e293]:
+        - generic [ref=e294]:
+          - article [ref=e297] [cursor=pointer]:
+            - generic [ref=e298]:
+              - link "58 000 kr" [ref=e299]:
+                - /url: /470775645
+              - button "Legg til som favoritt. Ikon med hjerteomriss" [ref=e301]:
+                - generic [ref=e302]: Legg til som favoritt.
+                - img "Ikon med hjerteomriss"
+          - generic [ref=e307]:
+            - generic [ref=e308]: Massey Ferguson 135
+            - generic [ref=e309]: "1975"
+        - generic [ref=e310]:
+          - article [ref=e313] [cursor=pointer]:
+            - generic [ref=e314]:
+              - link "25 000 kr" [ref=e315]:
+                - /url: /468102344
+              - button "Legg til som favoritt. Ikon med hjerteomriss" [ref=e317]:
+                - generic [ref=e318]: Legg til som favoritt.
+                - img "Ikon med hjerteomriss"
+          - generic [ref=e323]:
+            - generic [ref=e324]: Massey Ferguson 135
+            - generic [ref=e325]: 1972 / 4200 timer
+        - generic [ref=e326]:
+          - article [ref=e329] [cursor=pointer]:
+            - generic [ref=e330]:
+              - link "39 000 kr" [ref=e331]:
+                - /url: /469809630
+              - button "Legg til som favoritt. Ikon med hjerteomriss" [ref=e333]:
+                - generic [ref=e334]: Legg til som favoritt.
+                - img "Ikon med hjerteomriss"
+          - generic [ref=e339]:
+            - generic [ref=e340]: Massey Ferguson 135
+            - generic [ref=e341]: 1969 / 2316 timer
+        - generic [ref=e342]:
+          - article [ref=e345] [cursor=pointer]:
+            - generic [ref=e346]:
+              - link "30 000 kr" [ref=e347]:
+                - /url: /471782757
+              - button "Legg til som favoritt. Ikon med hjerteomriss" [ref=e349]:
+                - generic [ref=e350]: Legg til som favoritt.
+                - img "Ikon med hjerteomriss"
+          - generic [ref=e355]:
+            - generic [ref=e356]: Massey Ferguson 135
+            - generic [ref=e357]: "1974"
+        - generic [ref=e358]:
+          - article [ref=e361] [cursor=pointer]:
+            - generic [ref=e362]:
+              - link "35 000 kr" [ref=e363]:
+                - /url: /469893391
+              - button "Legg til som favoritt. Ikon med hjerteomriss" [ref=e365]:
+                - generic [ref=e366]: Legg til som favoritt.
+                - img "Ikon med hjerteomriss"
+          - generic [ref=e371]:
+            - generic [ref=e372]: Massey Ferguson 135
+            - generic [ref=e373]: 1971 / 5456 timer
+        - generic [ref=e374]:
+          - article [ref=e377] [cursor=pointer]:
+            - generic [ref=e378]:
+              - link "30 000 kr" [ref=e379]:
+                - /url: /468746665
+              - button "Legg til som favoritt. Ikon med hjerteomriss" [ref=e381]:
+                - generic [ref=e382]: Legg til som favoritt.
+                - img "Ikon med hjerteomriss"
+          - generic [ref=e387]:
+            - generic [ref=e388]: Massey Ferguson 135
+            - generic [ref=e389]: "1971"
+  - contentinfo [ref=e391]:
+    - navigation "Bunntekst" [ref=e393]:
+      - heading [level=1] [ref=e394]:
+        - link [ref=e395] [cursor=pointer]:
+          - /url: //www.finn.no
+          - img "Logoen til FINN" [ref=e396]:
+            - generic [ref=e397]: Mulighetenes marked
+      - generic [ref=e398]:
+        - heading "Næringsvirksomhet" [level=2] [ref=e399]
+        - link "Bli bedriftskunde" [ref=e400] [cursor=pointer]:
+          - /url: https://www.finn.no/bli-bedriftskunde
+        - link "Informasjon og inspirasjon" [ref=e401] [cursor=pointer]:
+          - /url: https://www.finn.no/bedriftskunde
+        - link "Admin for bedrifter" [ref=e402] [cursor=pointer]:
+          - /url: https://www.finn.no/bedrift
+      - generic [ref=e403]:
+        - heading "Om FINN" [level=2] [ref=e404]
+        - link "Karriere" [ref=e405] [cursor=pointer]:
+          - /url: https://vend.com/career
+        - link "FINNspirasjon" [ref=e406] [cursor=pointer]:
+          - /url: https://www.finn.no/finnspirasjon
+        - link "Om Vend" [ref=e407] [cursor=pointer]:
+          - /url: https://www.finn.no/bap/artikler/om-vend
+      - generic [ref=e408]:
+        - heading "Personvern" [level=2] [ref=e409]
+        - link "Personvernerklæring" [ref=e410] [cursor=pointer]:
+          - /url: https://vend.com/privacy/no-policy
+        - link "Personvern i FINN" [ref=e411] [cursor=pointer]:
+          - /url: https://hjelpesenter.finn.no/hc/no/articles/211889165
+        - button "Cookieinnstillinger" [ref=e412] [cursor=pointer]
+      - generic [ref=e413]:
+        - heading "Få hjelp" [level=2] [ref=e414]
+        - link "Kundeservice" [ref=e415] [cursor=pointer]:
+          - /url: https://hjelpesenter.finn.no/hc/no
+        - link "Trygg handel på FINN" [ref=e416] [cursor=pointer]:
+          - /url: https://www.finn.no/bap/artikler/trygg-pa-finn
+        - link "Fiks ferdig" [ref=e417] [cursor=pointer]:
+          - /url: https://hjelpesenter.finn.no/hc/no/articles/22599942992530-Fiks-ferdig-Slik-fungerer-det
+        - link "Brukervilkår" [ref=e418] [cursor=pointer]:
+          - /url: https://www.finn.no/vilkar/brukervilkar-finn
+        - link "Annonseregler" [ref=e419] [cursor=pointer]:
+          - /url: https://www.finn.no/vilkar/annonseregler-for-finn
+        - link "Tilgjengelighetserklæring" [ref=e420] [cursor=pointer]:
+          - /url: https://hjelpesenter.finn.no/hc/no/articles/16291504931858-Tilgjengelighetserklæring-på-FINN
+      - separator [ref=e421]
+      - generic [ref=e422]:
+        - heading "Sosiale medier" [level=2] [ref=e423]
+        - link [ref=e424] [cursor=pointer]:
+          - /url: https://www.facebook.com/finn.no/
+          - img "Facebook logo" [ref=e426]
+        - link [ref=e428] [cursor=pointer]:
+          - /url: https://twitter.com/finn_no
+          - img "Twitter logo" [ref=e430]
+        - link [ref=e432] [cursor=pointer]:
+          - /url: https://www.instagram.com/finn_no/
+          - img "Instagram logo" [ref=e434]
+        - link [ref=e436] [cursor=pointer]:
+          - /url: https://www.youtube.com/user/finn
+          - img "YouTube logo" [ref=e438]
+      - region "Opphavsrett" [ref=e440]:
+        - paragraph [ref=e441]: Innholdet er beskyttet etter åndsverkloven. Regelmessig, systematisk eller kontinuerlig innhenting, lagring, indeksering, distribusjon og all annen form for sammenstilling av data tillates ikke uten eksplisitt, skriftlig tillatelse fra FINN.
+        - paragraph [ref=e442]: © 1996–2026 FINN.no
+    - generic [ref=e445]:
+      - generic [ref=e446]: "Bli også kjent med:"
+      - generic [ref=e447]:
+        - link "Helthjem" [ref=e448] [cursor=pointer]:
+          - /url: https://helthjem.no/
+        - link "Lendo" [ref=e450] [cursor=pointer]:
+          - /url: https://www.lendo.no/
+        - link "Morgenlevering" [ref=e452] [cursor=pointer]:
+          - /url: https://morgenlevering.no/
+        - link "Nettbil" [ref=e454] [cursor=pointer]:
+          - /url: https://www.nettbil.no/
+        - link "Mobil med garanti" [ref=e456] [cursor=pointer]:
+          - /url: https://www.finn.no/nybrukt
+    - region "Personvern i Vend" [ref=e457]:
+      - generic [ref=e459]:
+        - generic [ref=e460]:
+          - img "En del av Vend"
+        - generic [ref=e462]:
+          - text: FINN.no er en del av Vend. Vend er ansvarlig for dine data på denne siden.
+          - link "Les mer" [ref=e463] [cursor=pointer]:
+            - /url: https://vend.com/privacy/no-policy
+  - dialog [ref=e464]:
+    - iframe [ref=e465]:
+      - generic [ref=f5e6]:
+        - generic [ref=f5e7]:
+          - generic [ref=f5e8]:
+            - generic [ref=f5e10]:
+              - img "Vend logo" [ref=f5e12]
+              - img "FINN logo" [ref=f5e14]
+            - heading "Cookieinnstillinger" [level=1] [ref=f5e16]
+          - paragraph [ref=f5e18]: Når du er logget inn, lagres cookieinnstillingene på kontoen din og gjelder på tvers av enheter der du er logget inn på FINN. Hvis kontoen ikke har noen lagrede innstillinger, lagrer vi de innstillingene som var aktive ved innlogging.
+          - paragraph [ref=f5e19]:
+            - text: Vi bruker cookies for å sikre kvaliteten på tjenestene våre. Når du godtar cookies, godtar du at Vend og våre
+            - link "41 partnere" [ref=f5e20] [cursor=pointer]:
+              - /url: "#"
+            - text: "kan bruke cookies, enhets-IDer og andre data som lagres og/eller vi får tilgang til på din enhet fra FINN, til å samle inn persondata, slik som informasjon om hvilke sider du har besøkt, for disse formålene:"
+          - generic [ref=f5e22]:
+            - button "Lagre og/eller få tilgang til informasjon på en enhet" [ref=f5e24] [cursor=pointer]
+            - button "Personlig tilpasset annonsering, annonseringsmåling, publikumsundersøkelser og tjenesteutvikling" [ref=f5e27] [cursor=pointer]
+            - button "Produktutvikling, personlig tilpassing, markedsføring (inkludert Google, Meta og Snap) og annonsering utført av Vend" [ref=f5e30] [cursor=pointer]
+          - paragraph [ref=f5e33]: Velg “Tilpass eller avvis” for å håndtere samtykkene dine eller avvise behandlingen av data basert på berettiget interesse. Du kan når som helst endre innstillingene dine via lenken “Cookieinnstillinger” på tjenestens side.
+          - paragraph [ref=f5e35]:
+            - link "Personvern- og cookieerklæring" [ref=f5e36] [cursor=pointer]:
+              - /url: https://vend.com/privacy/no-policy
+        - generic [ref=f5e37]:
+          - button "Godta alle" [ref=f5e38] [cursor=pointer]
+          - button "Tilpass eller avvis" [ref=f5e39] [cursor=pointer]

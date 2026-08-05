@@ -5,7 +5,7 @@ import type { Answer } from '../lib/scoring';
 import { readJson, removeKey, writeJson } from '../lib/storage';
 
 const STORAGE_KEY = 'fredagsquiz-v1';
-const SCREENS = ['start', 'quiz', 'host', 'hostend', 'waiting', 'results'] as const;
+const SCREENS = ['start', 'quiz', 'host', 'hostend', 'waiting', 'results', 'fasit'] as const;
 
 export type Screen = (typeof SCREENS)[number];
 
@@ -24,6 +24,8 @@ export interface QuizState {
   draftSound: number | null;
   revealOpen: boolean;
   copied: boolean;
+  /** Reset needs two taps, so a mis-tap mid-quiz can't wipe the answers. */
+  resetArmed: boolean;
 }
 
 export type QuizAction =
@@ -45,6 +47,10 @@ export type QuizAction =
   | { type: 'openReveal' }
   | { type: 'closeReveal' }
   | { type: 'setCopied'; value: boolean }
+  | { type: 'openFacit' }
+  | { type: 'closeFacit' }
+  | { type: 'armReset' }
+  | { type: 'disarmReset' }
   | { type: 'restart' };
 
 export function quizReducer(state: QuizState, action: QuizAction): QuizState {
@@ -135,6 +141,18 @@ export function quizReducer(state: QuizState, action: QuizAction): QuizState {
     case 'setCopied':
       return { ...state, copied: action.value };
 
+    case 'openFacit':
+      return state.presenter ? { ...state, screen: 'fasit', revealOpen: false } : state;
+
+    case 'closeFacit':
+      return { ...state, screen: 'host' };
+
+    case 'armReset':
+      return { ...state, resetArmed: true };
+
+    case 'disarmReset':
+      return { ...state, resetArmed: false };
+
     case 'restart':
       removeKey(STORAGE_KEY);
       return freshState();
@@ -224,6 +242,7 @@ function freshState(): QuizState {
     draftSound: null,
     revealOpen: false,
     copied: false,
+    resetArmed: false,
   };
 }
 
@@ -241,7 +260,7 @@ function restoreState(saved: unknown): QuizState {
   const presenter = raw.presenter === true;
   let screen: Screen = isScreen(raw.screen) ? raw.screen : 'start';
   if (screen === 'quiz' && presenter) screen = 'host';
-  if ((screen === 'host' || screen === 'hostend') && !presenter) screen = 'start';
+  if (!presenter && (screen === 'host' || screen === 'hostend' || screen === 'fasit')) screen = 'start';
 
   return {
     ...base,

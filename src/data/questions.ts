@@ -12,9 +12,10 @@ import { clamp } from '../lib/format';
  * and `scripts/fetch-media.mjs` to re-fetch. Sound clips are trimmed to eight
  * seconds and loudness-normalised.
  *
- * The photos on the price rounds are illustrasjonsfoto, not the sellers' own
- * pictures: FINN listing photos belong to the sellers and this site is public.
- * Every caption says so.
+ * The photos on the price rounds are screenshots of the real FINN listings with
+ * every price redacted, taken by `scripts/capture-ads.mjs`. They are the
+ * sellers' own pictures and belong to them — this is for an internal quiz that
+ * comes down straight afterwards.
  */
 
 export const POINTS_PER_QUESTION = 100;
@@ -79,8 +80,7 @@ export const QUESTIONS: readonly Question[] = [
   {
     kind: 'price',
     prompt: 'Hva koster denne traktoren på Finn?',
-    photoHint:
-      'Massey Ferguson MF135, 1971, med frontlaster. Illustrasjonsfoto — annonsen lå ute i august 2026.',
+    photoHint: 'Annonsen for en Massey Ferguson MF135 fra 1971, med prisen sladdet.',
     photo: 'pris-02-traktor.jpg',
     unitLabel: 'hele traktoren',
     answer: 51000,
@@ -116,8 +116,7 @@ export const QUESTIONS: readonly Question[] = [
   {
     kind: 'price',
     prompt: 'Hva var prisantydningen på denne hytta?',
-    photoHint:
-      'Hytte fra 1947 i Leksvik: 62 m², innlagt strøm og vann, peis, utsikt. Illustrasjonsfoto.',
+    photoHint: 'Annonsen for hytta i Leksvik, med alle pristall sladdet.',
     photo: 'pris-01-hytte.jpg',
     unitLabel: 'hele hytta',
     answer: 100000,
@@ -153,9 +152,10 @@ export const QUESTIONS: readonly Question[] = [
   {
     kind: 'price',
     prompt: 'Hva koster denne brukte bunaden på Finn?',
-    photoHint: 'Bunad, brukt og komplett. Illustrasjonsfoto — annonsen gjaldt en øst-telemarksbunad.',
+    photoHint: 'Annonsen for en brukt øst-telemarksbunad, med prisen sladdet.',
     photo: 'pris-03-bunad.jpg',
     unitLabel: 'hele bunaden, brukt',
+    source: 'https://www.finn.no/recommerce/forsale/item/455740691',
     answer: 102000,
     note: '102 000 kr. Brukt. Det er to traktorer og litt til, eller en hel hytte i Leksvik med noen tusen til overs.',
   },
@@ -188,10 +188,10 @@ export const QUESTIONS: readonly Question[] = [
   {
     kind: 'price',
     prompt: 'Hva koster dette spikerteltet med campingvogn?',
-    photoHint:
-      'Spikertelt med vogn på campingplass. Illustrasjonsfoto — annonsen gjaldt Våberg Camping.',
+    photoHint: 'Annonsen for spikertelt med Hobby 720-vogn på Våberg Camping, med prisen sladdet.',
     photo: 'pris-04-spikertelt.jpg',
     unitLabel: 'vogn og telt samlet',
+    source: 'https://www.finn.no/recommerce/forsale/item/464066904',
     answer: 420000,
     note: '420 000 kr. Hytta i Leksvik — 62 kvadratmeter, innlagt vann og strøm, peis og utsikt — lå ute til 100 000. Det er fire spikertelt per hytte.',
   },
@@ -219,9 +219,10 @@ export const QUESTIONS: readonly Question[] = [
   {
     kind: 'price',
     prompt: 'Hva koster denne brukte melkeroboten?',
-    photoHint: 'DeLaval melkerobot, årsmodell 2012. Illustrasjonsfoto.',
+    photoHint: 'Annonsen for en DeLaval melkerobot Classic 2012, med prisen sladdet.',
     photo: 'pris-05-melkerobot.jpg',
     unitLabel: 'brukt, hele roboten',
+    source: 'https://www.finn.no/recommerce/forsale/item/472064426',
     answer: 250000,
     note: '250 000 kr brukt. En ny koster godt over millionen. Det lå en til ute på 450 000 samtidig.',
   },
@@ -254,9 +255,10 @@ export const QUESTIONS: readonly Question[] = [
   {
     kind: 'price',
     prompt: 'Hva koster disse to Stressless-stolene med krakk?',
-    photoHint: 'To lenestoler med krakk, brukt. Illustrasjonsfoto.',
+    photoHint: 'Annonsen for to Stressless-stoler med krakk, med prisen sladdet.',
     photo: 'pris-06-lenestol.jpg',
     unitLabel: 'for begge stolene',
+    source: 'https://www.finn.no/recommerce/forsale/item/471410799',
     answer: 2000,
     note: '2 000 kr for begge — krakkene inkludert. Det norske stuemøbelet taper seg raskere enn du tror.',
   },
@@ -289,9 +291,10 @@ export const QUESTIONS: readonly Question[] = [
   {
     kind: 'price',
     prompt: 'Hva koster denne brukte Stressless-hjørnesofaen?',
-    photoHint: 'Hjørnesofa i skinn, brukt. Illustrasjonsfoto.',
+    photoHint: 'Annonsen for en Stressless Stella hjørnesofa med pall, med prisen sladdet.',
     photo: 'pris-07-sofa.jpg',
     unitLabel: 'hele sofaen',
+    source: 'https://www.finn.no/recommerce/forsale/item/468262052',
     answer: 75000,
     note: '75 000 kr. Samme merke som de to stolene til 2 000 kr lenger bak i quizen. Det er 37 stolpar per sofa.',
   },
@@ -323,9 +326,10 @@ export const QUESTIONS: readonly Question[] = [
   {
     kind: 'price',
     prompt: 'Hva koster et utstoppet elghode på Finn?',
-    photoHint: 'Utstoppet elghode på veggplate. Illustrasjonsfoto.',
+    photoHint: 'Annonsen for et utstoppet elghode på veggplate, med prisen sladdet.',
     photo: 'pris-08-elghode.jpg',
     unitLabel: 'ett hode',
+    source: 'https://www.finn.no/recommerce/forsale/item/466295748',
     answer: 3000,
     note: '3 000 kr. Det lå åtte av dem ute samtidig, fra 3 000 til 8 000. Markedet for utstoppet elg er større enn du trodde, og prisen lavere.',
   },
@@ -356,12 +360,13 @@ export const QUESTIONS: readonly Question[] = [
   },
   {
     kind: 'price',
-    prompt: 'Hva koster dette påkostede mikrohuset?',
-    photoHint: 'Mikrohus / minihus. Illustrasjonsfoto — annonsen lå i Vassenden.',
+    prompt: 'Hva koster dette mikrohuset på hjul?',
+    photoHint: 'Annonsen for et mikrohus på hjul, 18 m² med off-grid-mulighet, med prisen sladdet.',
     photo: 'pris-09-mikrohus.jpg',
     unitLabel: 'hele huset',
-    answer: 790000,
-    note: '790 000 kr. Nesten åtte ganger hytta i Leksvik, som har både strøm, vann og utsikt.',
+    answer: 600000,
+    note: '600 000 kr for 18 kvadratmeter på hjul. Hytta i Leksvik er 62 kvadratmeter med innlagt vann, strøm og utsikt, og kostet en sjettedel.',
+    source: 'https://www.finn.no/recommerce/forsale/item/410676404',
   },
   {
     kind: 'sound',
@@ -386,9 +391,10 @@ export const QUESTIONS: readonly Question[] = [
   {
     kind: 'price',
     prompt: 'Hva koster disse Dexter-kvigekalvene på Finn?',
-    photoHint: 'Dexter-kvige. Illustrasjonsfoto — annonsen lå i Farsund.',
+    photoHint: 'Annonsen for Dexter kvigekalver i Farsund, med prisen sladdet.',
     photo: 'pris-10-kvige.jpg',
     unitLabel: 'slik annonsen stod',
+    source: 'https://www.finn.no/recommerce/forsale/item/364986784',
     answer: 15000,
     note: '15 000 kr slik annonsen stod. Sjekk om det er per kalv eller for hele slengen før du bruker spørsmålet — annonseteksten er tvetydig.',
   },

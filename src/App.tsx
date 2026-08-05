@@ -1,8 +1,10 @@
 import { useEffect, useReducer } from 'react';
+import { ResetFooter } from './components/ResetFooter';
 import { RevealOverlay } from './components/RevealOverlay';
 import { questionAt } from './data/questions';
 import { mediaUrl } from './lib/media';
 import { useClipPlayer } from './lib/useClipPlayer';
+import { FacitScreen } from './screens/FacitScreen';
 import { HostEndScreen } from './screens/HostEndScreen';
 import { HostScreen } from './screens/HostScreen';
 import { QuizScreen } from './screens/QuizScreen';
@@ -51,6 +53,12 @@ export function App() {
       {screen === 'hostend' && <HostEndScreen dispatch={dispatch} />}
       {screen === 'waiting' && <WaitingScreen state={state} dispatch={dispatch} />}
       {screen === 'results' && <ResultsScreen state={state} dispatch={dispatch} />}
+      {screen === 'fasit' && <FacitScreen dispatch={dispatch} />}
+
+      {/* The results screen has its own restart button; two would just confuse. */}
+      {screen !== 'results' && !revealOpen && (
+        <ResetFooter armed={state.resetArmed} dispatch={dispatch} />
+      )}
 
       {revealOpen && <RevealOverlay state={state} dispatch={dispatch} player={player} />}
 

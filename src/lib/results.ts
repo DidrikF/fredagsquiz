@@ -139,6 +139,9 @@ function gapLabelFor(question: Question, answer: Answer): string {
   }
 
   if (difference === 0) return copy.results.bullseyePrice;
+  // A free item has no percentage error to speak of — say it in kroner only,
+  // or the card reads "Infinity %".
+  if (question.answer <= 0) return copy.results.priceGapFree(formatNumber(Math.abs(difference)));
   const errorPercent = Math.round((Math.abs(difference) / question.answer) * 100);
   const times = answer / question.answer;
   const suffix =

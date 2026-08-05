@@ -129,6 +129,7 @@ export const copy = {
     yearDecadeSuffix: ' — altså et annet tiår, egentlig.',
     priceGap: (amount: string, tooMuch: boolean, errorPercent: number) =>
       `${amount} kr ${tooMuch ? 'for mye' : 'for lite'} (${errorPercent} %)`,
+    priceGapFree: (amount: string) => `${amount} kr for mye. Den var gratis.`,
     priceTimesSuffix: (times: string) => ` — ${times} ganger prisen.`,
     priceThirdSuffix: ' — under en tredjedel av prisen.',
     yourPick: (label: string) => `Du: ${label}`,

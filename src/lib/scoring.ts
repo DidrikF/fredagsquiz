@@ -22,6 +22,12 @@ export function scoreQuestion(question: Question, answer: Answer): number {
         POINTS_PER_QUESTION,
       );
     case 'price': {
+      // Percentage error is undefined for a free item, and dividing by it
+      // would score every player NaN. FINN is full of "gis bort" listings,
+      // so this is a real thing to author by accident.
+      if (question.answer <= 0) {
+        return answer === question.answer ? POINTS_PER_QUESTION : 0;
+      }
       const error = Math.abs(answer - question.answer) / question.answer;
       return clamp(
         Math.round(POINTS_PER_QUESTION * (1 - error / PRICE_ERROR_AT_ZERO)),

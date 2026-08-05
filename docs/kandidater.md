@@ -13,15 +13,24 @@ it can be pasted more or less straight into `src/data/questions.ts`.
 
 ## Before you pick
 
-Four things that will bite you, found the hard way while researching this.
+Five things that will bite you, found the hard way while researching this.
 
 **FINN listings expire.** Every price below is from early August 2026. A private
 listing can vanish in a week. Screenshot the photo now and re-check the price
 the morning of the quiz — the `note` field is where you say "lå ute i august".
 
-**FINN sellers use fake prices.** Several livestock listings show `123 kr` or
-`1 234 kr` as a placeholder, meaning "ring meg". `Nrf kviger selges` at 123 kr is
-not a 123 kr cow. Anything suspiciously round-and-silly is a dummy price.
+**FINN sellers use fake prices.** Placeholder prices meaning "ring meg" are
+everywhere: `Nrf kviger selges — 123 kr`, `Tiroler kviger — 1 234 kr`, `Sølv —
+123 456 kr`, `Reklameskilt og melkespann — 999 999 kr`. If the number looks like
+someone leaning on the keyboard, it is.
+
+**Never author a price question with `answer: 0`.** FINN is full of "gis bort"
+listings — there are at least eight grand pianos being given away right now,
+which is a great fact and a terrible question. Percentage error divides by the
+answer, so a free item used to score every player `NaN` and print `Infinity %`
+on the results card. I found this while researching and
+[fixed it](../src/lib/scoring.ts) — a free item now scores 100 only on an exact
+guess — but the round is still pointless, so don't.
 
 **Watch the unit.** `Dexter kvige kalver selges — 15 000 kr` — is that one calf
 or the lot? The `unitLabel` field exists for exactly this, but you have to read
@@ -159,25 +168,45 @@ car. Everyone will guess millions.
 > **note:** «100 000 kr i prisantydning. Innlagt strøm og vann, peis, utsikt, 1 009 kvadratmeter tomt — og et bud på 150 000 lå allerede inne. Nærmeste butikk er 6,3 km unna.»
 > **FINN-kode 454063859** — [annonsen](https://www.finn.no/realestate/leisuresale/ad.html?finnkode=454063859)
 
-### 2. Massey Ferguson FE35, 1970 ⚠️ — **10 000 kr**
+### 2. Massey Ferguson MF135, 1971 ✅ — **51 000 kr**
 
-A whole tractor for the price of a phone. The best "billigere enn du tror" item
-on the list.
+The one tractor. **MF 100-serien er den mest utbredte traktorserien noensinne i
+det norske traktormarkedet** — Eik alone sold at least 23 000 of them — and the
+MF 135 is the archetype. If your colleagues picture "a tractor", they picture
+this one.
 
-> `unitLabel: 'hele traktoren'` · Molde · **FINN-kode 437912390**
+The ad is the best part. It has a front loader, two snow blades, a small bucket
+and possibly a two-furrow plough, and the seller is disarmingly honest about the
+faults: *"Bruker litt olje. Svetter litt servoolje. Lekker litt kjølevæske."*
 
-### 3. Massey Ferguson 35 Bensin, 1960 ⚠️ — **24 000 kr**
+> `unitLabel: 'hele traktoren'` · Porsgrunn, modellår 1971, 51 000 kr inkl. mva.
+> **note:** «51 000 kr — med frontlaster, to brøyteskjær og ei lita skuffe. Selgeren skriver at den bruker litt olje, svetter litt servoolje og lekker litt kjølevæske. «Denne starter og går umiddelbart alltid.»»
+> **FINN-kode 472181593** — [annonsen](https://www.finn.no/mobility/item/472181593)
+> **Kilde for «mest utbredte»:** [traktor.no om Eikmaskin](https://www.traktor.no/et-lite-stykke-norgeshistorie-hvordan-skapte-familien-eik-en-av-landets-storste-maskingrossister/s/5-151-13405) · [snl.no/Massey_Ferguson](https://snl.no/Massey_Ferguson)
+>
+> If you meant *most sold today* rather than *most widespread ever*, that is John
+> Deere — [Norges mest solgte for fjerde år på rad](https://www.felleskjopet.no/presse/pressemeldinger/norges-mest-populaere-traktor--for-tredje-aar-paa-rad/), with the 6M as the top series, while
+> Valtra led total registrations in 2025. Say the word and I'll swap it, but a
+> new John Deere makes a duller price question than a 54-year-old MF 135.
 
-Same joke, better photo — a 65-year-old grey-and-red classic.
+### 3. Øst-Telemark bunad ⚠️ — **102 000 kr**
 
-> `unitLabel: 'hele traktoren'` · Ørsta · **FINN-kode 469887111**
+Secondhand. A used bunad costs more than the cabin in #1 and twice the tractor
+in #2, and almost nobody guesses above 40 000.
 
-### 4. Massey Ferguson 5713 Dyna6, 2020 ⚠️ — **815 000 kr**
+> `unitLabel: 'hele bunaden, brukt'` · Fiskum · **FINN-kode 455740691**
+> **note:** «102 000 kr. Brukt. Det er to traktorer og litt til. En skreddersydd fanabunad lenger ned i samme søk lå på 95 000.»
 
-The counterweight. Run it *after* the FE35 and the room recalibrates violently.
+### 4. Spikertelt med Hobby 720-vogn ⚠️ — **420 000 kr**
 
-> `unitLabel: 'hele traktoren'` · Surnadal, 2 360 timer · **FINN-kode 467723675**
-> **note:** «815 000 kr, brukt, med 2 360 timer på telleren. Traktoren fra 1970 lenger opp koster 10 000. Det er 81 gamle traktorer per nye.»
+Peak Norway, and the perfect counterweight to the Leksvik cabin: a caravan with
+a permanent annex on a campsite costs **four times** a whole cabin with mains
+water, power and a fjord view. Run it in the same quiz as #1 and let the room
+sit with that.
+
+> `unitLabel: 'vogn og telt samlet'` · Våberg Camping, Sundlandet (Heimdal)
+> **note:** «420 000 kr for vogn og spikertelt. Hytta i Leksvik — 62 kvadratmeter, innlagt vann og strøm, peis og utsikt — lå ute til 100 000. Det er fire spikertelt per hytte.»
+> **FINN-kode 464066904**
 
 ### 5. DeLaval melkerobot Classic, 2012 ⚠️ — **250 000 kr**
 
@@ -227,126 +256,189 @@ skip it.
 
 ### Also seen, if you need substitutes
 
-Massey Ferguson 6616 (2013, 6 200 t) 475 000 kr · MF 5713S (2018) 680 000 kr ·
-Utstoppet hel elg 8 000 kr (Eiken) · Naust ved Fosterlågen (dummy price, skip) ·
-Fritidsbolig Fannrem.
+Skreddersydd fanabunad 95 000 kr (Drammen) · Utstoppet hel elg 8 000 kr (Eiken) ·
+Spikertelt med sjøutsikt 65 000 kr (Staff Camping) · Hermès-veske 179 000 kr fra
+Lånekontoret · Fritidsbolig Fannrem.
+
+Other tractors are deliberately **not** here — one is the point. If the MF 135
+listing dies before Friday, search `finn.no/mobility/search/b2b/agriculturetractor?q=MF+135`
+for another from the same series rather than reaching for a different model.
+
+---
+## Gjett lyden — 10 kandidater
+
+Rebuilt: six of the previous ten were giveaways and are gone — måke, islom,
+oppringt modem, dampfløyte, korntørke and bensinpumpe. A seagull is a seagull.
+Four survived, and six harder ones took the empty slots.
+
+Nine of the ten come from **Work With Sounds**, an EU project that recorded
+disappearing workplace sounds. CC BY 4.0, credit "Work With Sounds / Werstas".
+They are ideal here: nothing has a signature everyone knows, so the four options
+do real work.
+
+Every link below was fetched and returns 200.
+
+### Difficulty, and how to use it
+
+Sound rounds score binary — 100 or 0. With three of them in a nine-question quiz,
+300 points ride on rounds with no partial credit, so a set of three brutal ones
+turns a third of the quiz into a lottery. Build a ladder instead:
+
+| | Kandidat | Hvorfor der |
+| --- | --- | --- |
+| **Medium** | 1, 2 | Most people land it once they read the options |
+| **Hard** | 3–6 | Splits the room |
+| **Brutal** | 7–10 | The reveal is the payoff, not the guess |
+
+**Anbefalt trio:** #1 Håndmelking → #5 Glødehodemotor → #7 Vaskeanlegget.
+Opens on theme, peaks on something unmistakably Norwegian, closes on a sound
+from our own industry that nobody will place.
 
 ---
 
-## Gjett lyden — 10 kandidater
-
-All ten are from Wikimedia Commons with a free licence and a direct download
-link. Seven come from **Work With Sounds**, an EU project that recorded
-disappearing workplace sounds — CC BY 4.0, credit "Work With Sounds / Werstas".
-They are ideal here: recognisable enough to be fair, obscure enough that four
-options are genuinely needed.
+## Medium
 
 ### 1. Håndmelking ✅ — CC BY 4.0
 
-The obvious opener for this company. Rhythmic, unmistakable once you hear it.
+Milk hitting a metal pail, in rhythm. The theme question, and the only one of the
+four options that could make that particular sound.
 
 > [WWS_Handmilking.ogg](https://upload.wikimedia.org/wikipedia/commons/9/91/WWS_Handmilking.ogg) · 984 KB
 > **options:** `['Regn på et blikktak', 'Håndmelking av ei ku', 'Noen som vasker opp', 'En kaffetrakter som brygger']` → **1**
+> **note:** «Håndmelking. Omtrent 1,5 liter i minuttet hvis du er god. Et melkeorgan tar fire spener samtidig og bryr seg ikke om at du er god.»
 
-### 2. Melkeorgan (melkemaskin) ✅ — CC BY 4.0
+### 2. Fôrvogn ✅ — CC BY 4.0
 
-The pulsating vacuum. Half the room will have heard it in a fjøs and still not
-place it out of context.
-
-> [WWS_Milkingunit.ogg](https://upload.wikimedia.org/wikipedia/commons/6/61/WWS_Milkingunit.ogg) · 408 KB
-> **options:** `['En respirator', 'Et melkeorgan i fjøset', 'En gammel oljekjele', 'En luftpumpe på bensinstasjonen']` → **1**
-
-### 3. Fôrvogn ✅ — CC BY 4.0
+Rail-mounted feed wagon down the length of a barn. Motor plus rolling metal.
 
 > [WWS_Feedwagon.ogg](https://upload.wikimedia.org/wikipedia/commons/c/ca/WWS_Feedwagon.ogg) · 170 KB
 > **options:** `['En fôrvogn i fjøset', 'En skiheis', 'Et transportbånd på flyplassen', 'En snøfreser']` → **0**
 
+---
+
+## Hard
+
+### 3. Melkeorgan ✅ — CC BY 4.0
+
+The pulsating vacuum of a milking cluster. Half the room has stood next to one
+and still will not place it out of context.
+
+> [WWS_Milkingunit.ogg](https://upload.wikimedia.org/wikipedia/commons/6/61/WWS_Milkingunit.ogg) · 408 KB
+> **options:** `['En respirator', 'Et melkeorgan i fjøset', 'En gammel oljekjele', 'En luftpumpe på bensinstasjonen']` → **1**
+
 ### 4. Fjernskriver ✅ — CC BY 4.0
 
-Mechanical teleprinter. Sounds like a machine gun made of typewriters.
+A mechanical teleprinter at speed. Sounds like a typewriter being fired from a
+machine gun.
 
 > [WWS_Teleprintertyping.ogg](https://upload.wikimedia.org/wikipedia/commons/4/46/WWS_Teleprintertyping.ogg) · 1,4 MB
 > **options:** `['En symaskin', 'En fjernskriver', 'En vevstol', 'En billettautomat']` → **1**
 
-### 5. Dampfløyte ✅ — CC BY 4.0
+### 5. Glødehodemotor ✅ — CC BY 4.0
 
-Short, loud, dramatic. Good as the last sound round.
+The slow, heavy *tøff–tøff–tøff* of a semidiesel through the exhaust pipe. The
+sound of the Norwegian coast for fifty years, and the one on this list most
+likely to make someone's father text them about it afterwards.
 
-> [WWS_Steamwhistle.ogg](https://upload.wikimedia.org/wikipedia/commons/b/b4/WWS_Steamwhistle.ogg) · 122 KB
-> **options:** `['En hurtigrutebåt', 'En dampfløyte på en fabrikk', 'Et tog som varsler', 'Et skipshorn i tåke']` → **1**
-> 🔴 The last three are all a bit right. Tighten the distractors or swap two out.
+> [WWS_Hotbulbengineexhaustpipe.ogg](https://upload.wikimedia.org/wikipedia/commons/7/7c/WWS_Hotbulbengineexhaustpipe.ogg) · 600 KB
+> **options:** `['Et damplokomotiv som står stille', 'En glødehodemotor i en gammel skøyte', 'En hjullaster på tomgang', 'En vedkløyver']` → **1**
+> **note:** «En glødehodemotor — semidiesel. Du varmer opp toppen med blåselampe før start, og så går den til den går tom. Den lyden var Norskekysten i femti år.»
+> There is a longer, richer 5 MB recording of a Storebro engine as an alternative: [WWS_Storebrohotbulbengine.ogg](https://upload.wikimedia.org/wikipedia/commons/d/df/WWS_Storebrohotbulbengine.ogg)
 
-### 6. Bensinpumpe ✅ — CC BY 4.0
+### 6. Rullemaskin ✅ — CC BY 4.0
 
-> [WWS_Fueldispenser.ogg](https://upload.wikimedia.org/wikipedia/commons/e/ef/WWS_Fueldispenser.ogg) · 286 KB
-> **options:** `['En bensinpumpe', 'En vannslange i hagen', 'Et akvarium', 'En kaffemaskin som skummer melk']` → **0**
+A box mangle — a stone-weighted wooden chest rolled over linen. Deep wooden
+rumble with a turn at each end.
 
-### 7. Korntørke ✅ — CC BY 4.0
+> [WWS_Boxmangle.ogg](https://upload.wikimedia.org/wikipedia/commons/7/77/WWS_Boxmangle.ogg) · 1,7 MB
+> **options:** `['En rullemaskin for sengetøy', 'En trebåt som gynger mot brygga', 'En gammel heis', 'Et kjegleoppsett i en bowlinghall']` → **0**
 
-> [WWS_Graindryer.ogg](https://upload.wikimedia.org/wikipedia/commons/e/ec/WWS_Graindryer.ogg) · 687 KB
-> **options:** `['Et ventilasjonsanlegg', 'En korntørke', 'En vindtunnel', 'En støvsuger i naborommet']` → **1**
+---
 
-### 8. Måke (gråmåke) ✅ — CC0
+## Brutal
 
-The seagull from the original placeholder set, now with a real file and no
-licence worries at all.
+### 7. Vaskeanlegget til et melkeanlegg ✅ — CC BY 4.0
 
-> [XC707075 - European Herring Gull.mp3](https://upload.wikimedia.org/wikipedia/commons/5/5c/XC707075_-_European_Herring_Gull_-_Larus_argentatus.mp3) · 581 KB · CC0
-> **options:** `['En måke på taket', 'En kråke', 'En baby som gråter', 'En katt utenfor døra']` → **0**
+The wash cycle that runs after every milking. Brutal by construction: all four
+options are something rinsing itself, so nobody can shortcut it by category.
+Best closer on the list — the reveal is "this runs in our own plants, twice a
+day, and none of you knew what it sounded like".
 
-### 9. Islom ✅ — CC BY-SA 3.0
+> [WWS_MilkingMachineCleaningUnit.ogg](https://upload.wikimedia.org/wikipedia/commons/5/55/WWS_MilkingMachineCleaningUnit.ogg) · 770 KB
+> **options:** `['En oppvaskmaskin på et storkjøkken', 'Vaskeanlegget til et melkeanlegg', 'En kaffemaskin som renser seg', 'En vaskemaskin på sentrifuge']` → **1**
 
-The loneliest sound in the Nordics. Beautiful, and a genuine 50/50 against
-"ulv" for most people.
+### 8. Repslagermaskin ✅ — CC BY 4.0
 
-> [Gavia immer - Common Loon XC139388.mp3](https://upload.wikimedia.org/wikipedia/commons/8/80/Gavia_immer_-_Common_Loon_XC139388.mp3) · 2,4 MB
-> **options:** `['En ulv langt unna', 'En lom på vannet', 'Et menneske som roper', 'En hund som uler']` → **1**
+Rope being laid up. Rhythmic, stranded, completely unplaceable.
 
-### 10. Modem på oppringt samband ✅ — public domain
+> [WWS_Ropemakingmachine.ogg](https://upload.wikimedia.org/wikipedia/commons/c/c0/WWS_Ropemakingmachine.ogg) · 1,5 MB
+> **options:** `['En repslagermaskin', 'En garnvinde på en fabrikk', 'Et karusellmaskineri på tivoli', 'En gammel filmfremviser']` → **0**
 
-Pure nostalgia bait, and it splits the room by age exactly the way you want on a
-Friday.
+### 9. Gullvasking med vaskerenne ✅ — CC BY 4.0
 
-> [Dial_up_modem_noises.ogg](https://upload.wikimedia.org/wikipedia/commons/3/33/Dial_up_modem_noises.ogg) · 416 KB
-> **options:** `['Et faksapparat', 'Et modem som ringer opp', 'En gammel skriver', 'Et alarmanlegg']` → **1**
-> 🔴 "Faks" and "modem" are close cousins acoustically. Consider replacing the fax option.
+Water and gravel through a sluice box. Option A is *nearly* right, which is the
+whole point.
+
+> [WWS_Goldprospectorwithasluicebox.ogg](https://upload.wikimedia.org/wikipedia/commons/7/7e/WWS_Goldprospectorwithasluicebox.ogg) · 594 KB
+> **options:** `['En bekk over stein', 'En gullvasker med vaskerenne', 'Grus som tippes av et lasteplan', 'En betongblander']` → **1**
+
+### 10. Mekanisk regnemaskin ✅ — CC BY 4.0
+
+A Burroughs adding machine: key clatter, then the lever. Against a cash register
+and a time clock, which sound almost identical, because they are almost the same
+machine.
+
+> [WWS_Burroughsaccountingmachine.ogg](https://upload.wikimedia.org/wikipedia/commons/7/73/WWS_Burroughsaccountingmachine.ogg) · 407 KB
+> **options:** `['En mekanisk regnemaskin', 'Et gammelt kassaapparat', 'Et stemplingsur', 'En manuell skrivemaskin']` → **0**
+
+---
 
 ### Reserve bench, all verified links
 
-| Lyd | Fil | Lisens |
-| --- | --- | --- |
-| Ku som rauter | [Single_Cow_Moo.ogg](https://upload.wikimedia.org/wikipedia/commons/a/a5/Single_Cow_Moo.ogg) | CC BY-SA 4.0 |
-| Sau | [Sheep_bleating.ogg](https://upload.wikimedia.org/wikipedia/commons/1/13/Sheep_bleating.ogg) | Public domain |
-| Bjeller på beite | [Cowbells_on_Monte_Baldo.ogg](https://upload.wikimedia.org/wikipedia/commons/8/8f/Cowbells_on_Monte_Baldo.ogg) | CC BY-SA 4.0 |
-| Melkemottak | [WWS_MilkReceiver.ogg](https://upload.wikimedia.org/wikipedia/commons/9/93/WWS_MilkReceiver.ogg) | CC BY 4.0 |
-| Traktormotor (Ursus C342) | [WWS_TractorUrsusC342engine.ogg](https://upload.wikimedia.org/wikipedia/commons/f/ff/WWS_TractorUrsusC342engine.ogg) | CC BY 4.0 |
-| Kaffekvern | [Coffee_grinder.ogg](https://upload.wikimedia.org/wikipedia/commons/0/01/Coffee_grinder.ogg) | Public domain |
-| Rullemaskin | [WWS_Boxmangle.ogg](https://upload.wikimedia.org/wikipedia/commons/7/77/WWS_Boxmangle.ogg) | CC BY 4.0 |
-| Vekkerklokke som tikker | [WWS_Alarmclockticking.ogg](https://upload.wikimedia.org/wikipedia/commons/e/ee/WWS_Alarmclockticking.ogg) | CC BY 4.0 |
-| Iskrembil | [WWS_HomeIceCreamvan.ogg](https://upload.wikimedia.org/wikipedia/commons/8/8b/WWS_HomeIceCreamvan.ogg) | CC BY 4.0 |
-| Vannhjul | [WWS_Waterwheel.ogg](https://upload.wikimedia.org/wikipedia/commons/9/96/WWS_Waterwheel.ogg) | CC BY 4.0 |
-| Brannalarm | [Activated_fire_alarm.ogg](https://upload.wikimedia.org/wikipedia/commons/e/e1/Activated_fire_alarm_%28sound%29.ogg) | CC BY-SA 3.0 au |
-| Torden | [Thunder_01.ogg](https://upload.wikimedia.org/wikipedia/commons/f/fa/Thunder_01.ogg) | CC BY-SA 4.0 |
+Harder than the ones I cut, easier than the brutal four.
 
+| Lyd | Fil | Lisens | Nivå |
+| --- | --- | --- | --- |
+| Melkemottak | [WWS_MilkReceiver.ogg](https://upload.wikimedia.org/wikipedia/commons/9/93/WWS_MilkReceiver.ogg) | CC BY 4.0 | hard |
+| Traktormotor (Ursus C342) | [WWS_TractorUrsusC342engine.ogg](https://upload.wikimedia.org/wikipedia/commons/f/ff/WWS_TractorUrsusC342engine.ogg) | CC BY 4.0 | medium |
+| Trommel for polering | [WWS_Tumblingbarrel.ogg](https://upload.wikimedia.org/wikipedia/commons/c/c3/WWS_Tumblingbarrel.ogg) | CC BY 4.0 | brutal |
+| Bløtleggingshjul | [WWS_Soakingwheel.ogg](https://upload.wikimedia.org/wikipedia/commons/b/be/WWS_Soakingwheel.ogg) | CC BY 4.0 | brutal |
+| Vannhjul | [WWS_Waterwheel.ogg](https://upload.wikimedia.org/wikipedia/commons/9/96/WWS_Waterwheel.ogg) | CC BY 4.0 | hard |
+| Korntørke | [WWS_Graindryer.ogg](https://upload.wikimedia.org/wikipedia/commons/e/ec/WWS_Graindryer.ogg) | CC BY 4.0 | medium |
+| Iskrembil | [WWS_HomeIceCreamvan.ogg](https://upload.wikimedia.org/wikipedia/commons/8/8b/WWS_HomeIceCreamvan.ogg) | CC BY 4.0 | medium |
+| Ku som rauter | [Single_Cow_Moo.ogg](https://upload.wikimedia.org/wikipedia/commons/a/a5/Single_Cow_Moo.ogg) | CC BY-SA 4.0 | for lett |
+| Bjeller på beite | [Cowbells_on_Monte_Baldo.ogg](https://upload.wikimedia.org/wikipedia/commons/8/8f/Cowbells_on_Monte_Baldo.ogg) | CC BY-SA 4.0 | for lett |
+
+### Cut, and why
+
+Måke, islom, oppringt modem, dampfløyte, korntørke, bensinpumpe. The first three
+are instantly recognisable to anyone who has been outdoors or online. The steam
+whistle had three distractors that were all defensibly correct, which is unfair
+rather than hard. The grain dryer and the fuel pump are just fans and liquid —
+too generic to have a right answer worth arguing about.
 ---
 
 ## Et forslag til de ni
 
-Alternating year → price → sound, ordered so the tractor pair lands either side
-of the room recalibrating, and the two best surprises sit late.
+Alternating year → price → sound. The sounds climb medium → hard → brutal, and
+the price rounds are ordered so the spikertelt lands *after* the cabin — the
+whole joke is that the caravan costs four times the house.
 
-1. **År** — Kvikk Lunsj (1937)
-2. **Pris** — Massey Ferguson FE35 1970 (10 000 kr)
-3. **Lyd** — Håndmelking
-4. **År** — Litago (1994)
-5. **Pris** — Utstoppet elghode (3 000 kr)
-6. **Lyd** — Modem
-7. **År** — Navnet TINE (1992)
-8. **Pris** — Hytta i Leksvik (100 000 kr)
-9. **Lyd** — Islom
+| # | Runde | Spørsmål | Svar |
+| --- | --- | --- | --- |
+| 1 | År | Kvikk Lunsj | 1937 |
+| 2 | Pris | Massey Ferguson MF135, 1971 | 51 000 kr |
+| 3 | Lyd | Håndmelking · *medium* | — |
+| 4 | År | Litago | 1994 |
+| 5 | Pris | Utstoppet elghode | 3 000 kr |
+| 6 | Lyd | Glødehodemotor · *hard* | — |
+| 7 | År | Navnet TINE | 1992 |
+| 8 | Pris | Hytta i Leksvik | 100 000 kr |
+| 9 | Lyd | Vaskeanlegget til et melkeanlegg · *brutal* | — |
 
-Two house questions, two "billigere enn du tror", one pure nostalgia, and the
-cabin as the closer.
+Two house questions, one tractor, two "billigere enn du tror", and a sound
+ladder that ends on our own industry. If you want the caravan in as well, swap
+it for #5 and move the moose head to the bench — but keep it after the cabin.
 
 ## Attribution
 

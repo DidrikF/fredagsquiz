@@ -1,7 +1,7 @@
 import { clamp } from '../lib/format';
 
 /*
- * The whole quiz lives in this file. Twenty-two questions, picked from the
+ * The whole quiz lives in this file. Nineteen questions, picked from the
  * thirty researched candidates in docs/kandidater.md. Delete more and
  * everything downstream follows: the maximum score is `QUESTIONS.length * 100`,
  * and the progress label, emoji strip and Slack summary all recount themselves.
@@ -126,16 +126,6 @@ export const QUESTIONS: readonly Question[] = [
     note: 'Bagasjebåndet. Du har stått ved et hundre ganger og aldri hørt etter en eneste gang.',
   },
   {
-    kind: 'price',
-    prompt: 'Hva koster denne brukte bunaden på Finn?',
-    photoHint: 'Annonsen for en brukt øst-telemarksbunad, med prisen sladdet.',
-    photo: 'pris-03-bunad.jpg',
-    unitLabel: 'hele bunaden, brukt',
-    source: 'https://www.finn.no/recommerce/forsale/item/455740691',
-    answer: 102000,
-    note: '102 000 kr. Brukt. Det er to traktorer og litt til — eller ei hel fritidshytte, for det lå ei ute i Leksvik til 100 000 samtidig.',
-  },
-  {
     kind: 'sound',
     prompt: 'Hva hørte du?',
     clipName: 'lyd-03-melkemaskin.mp3',
@@ -212,16 +202,6 @@ export const QUESTIONS: readonly Question[] = [
     source: 'https://en.wikipedia.org/wiki/Maarud',
   },
   {
-    kind: 'price',
-    prompt: 'Hva koster disse to Stressless-stolene med krakk?',
-    photoHint: 'Annonsen for to Stressless-stoler med krakk, med prisen sladdet.',
-    photo: 'pris-06-lenestol.jpg',
-    unitLabel: 'for begge stolene',
-    source: 'https://www.finn.no/recommerce/forsale/item/471410799',
-    answer: 2000,
-    note: '2 000 kr for begge — krakkene inkludert. Det norske stuemøbelet taper seg raskere enn du tror.',
-  },
-  {
     kind: 'sound',
     prompt: 'Hva hørte du?',
     clipName: 'lyd-06-batmotor.mp3',
@@ -234,16 +214,6 @@ export const QUESTIONS: readonly Question[] = [
     ],
     answer: 1,
     note: 'En gammel enstempers båtmotor — glødehode, eller semidiesel. Du varmet opp toppen med blåselampe før start, og så gikk den til den gikk tom. Den lyden var Norskekysten i femti år.',
-  },
-  {
-    kind: 'price',
-    prompt: 'Hva koster denne brukte Stressless-hjørnesofaen?',
-    photoHint: 'Annonsen for en Stressless Stella hjørnesofa med pall, med prisen sladdet.',
-    photo: 'pris-07-sofa.jpg',
-    unitLabel: 'hele sofaen',
-    source: 'https://www.finn.no/recommerce/forsale/item/468262052',
-    answer: 75000,
-    note: '75 000 kr. Samme merke som de to stolene til 2 000 kr tidligere i quizen. Det er 37 stolpar per sofa.',
   },
   {
     kind: 'price',

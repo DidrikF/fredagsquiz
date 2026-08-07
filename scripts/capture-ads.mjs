@@ -44,11 +44,8 @@ const MONEY = new RegExp(MONEY_SOURCE, 'i');
 
 const ADS = [
   ['pris-02-traktor', 'https://www.finn.no/mobility/item/472181593'],
-  ['pris-03-bunad', 'https://www.finn.no/recommerce/forsale/item/455740691'],
   ['pris-04-spikertelt', 'https://www.finn.no/recommerce/forsale/item/464066904'],
   ['pris-05-melkerobot', 'https://www.finn.no/recommerce/forsale/item/472064426'],
-  ['pris-06-lenestol', 'https://www.finn.no/recommerce/forsale/item/471410799'],
-  ['pris-07-sofa', 'https://www.finn.no/recommerce/forsale/item/468262052'],
   ['pris-08-elghode', 'https://www.finn.no/recommerce/forsale/item/466295748'],
   ['pris-09-mikrohus', 'https://www.finn.no/recommerce/forsale/item/410676404'],
   ['pris-10-kvige', 'https://www.finn.no/recommerce/forsale/item/364986784'],

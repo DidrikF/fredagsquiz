@@ -1,7 +1,7 @@
 import { clamp } from '../lib/format';
 
 /*
- * The whole quiz lives in this file. Nineteen questions, picked from the
+ * The whole quiz lives in this file. Seventeen questions, picked from the
  * thirty researched candidates in docs/kandidater.md. Delete more and
  * everything downstream follows: the maximum score is `QUESTIONS.length * 100`,
  * and the progress label, emoji strip and Slack summary all recount themselves.
@@ -91,11 +91,13 @@ export const QUESTIONS: readonly Question[] = [
     prompt: 'Hva hørte du?',
     clipName: 'lyd-01-handmelking.mp3',
     clip: 'lyd-01-handmelking.mp3',
+    // All four are a rhythmic jet or hiss, so the round is decided by ear and
+    // not by which option sounds like it belongs in a TINE quiz.
     options: [
-      'Regn på et blikktak',
+      'Melkeskummeren på en kaffemaskin',
       'Håndmelking av ei ku',
-      'Noen som vasker opp',
-      'En kaffetrakter som brygger',
+      'En sykkelpumpe',
+      'Noen som fyller en bøtte fra en kran',
     ],
     answer: 1,
     note: 'Håndmelking. Rundt 1,5 liter i minuttet hvis du er god. En melkemaskin tar fire spener samtidig og bryr seg ikke om at du er god.',
@@ -124,20 +126,6 @@ export const QUESTIONS: readonly Question[] = [
     ],
     answer: 0,
     note: 'Bagasjebåndet. Du har stått ved et hundre ganger og aldri hørt etter en eneste gang.',
-  },
-  {
-    kind: 'sound',
-    prompt: 'Hva hørte du?',
-    clipName: 'lyd-03-melkemaskin.mp3',
-    clip: 'lyd-03-melkemaskin.mp3',
-    options: [
-      'En respirator',
-      'En melkemaskin i fjøset',
-      'En gammel oljekjele',
-      'En luftpumpe på bensinstasjonen',
-    ],
-    answer: 1,
-    note: 'En melkemaskin. Pulseringen etterligner kalvens rytme — det er derfor den lyder som noe som puster.',
   },
   {
     kind: 'year',
@@ -189,17 +177,6 @@ export const QUESTIONS: readonly Question[] = [
     source: 'https://www.finn.no/recommerce/forsale/item/472064426',
     answer: 250000,
     note: '250 000 kr brukt. En ny koster godt over millionen. Det lå en til ute på 450 000 samtidig.',
-  },
-  {
-    kind: 'year',
-    prompt: 'Når startet produksjonen av potetgull i Norge?',
-    photoHint: 'Foto: potetgull. Illustrasjonsfoto.',
-    photo: 'aar-06-potetgull.jpg',
-    min: 1920,
-    max: 1980,
-    answer: 1936,
-    note: '1936, hos Maarud. Og «potetgull» er ikke et vanlig norsk ord — det er et varemerke. Resten heter chips.',
-    source: 'https://en.wikipedia.org/wiki/Maarud',
   },
   {
     kind: 'sound',

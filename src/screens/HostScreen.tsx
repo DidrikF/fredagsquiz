@@ -37,7 +37,7 @@ export function HostScreen({ state, dispatch, player }: Props) {
             {clipButtonLabel(player)}
           </button>
           <p className="text-muted clip-caption">{copy.host.clipCaption}</p>
-          {!player.hasFile && <p className="clip-missing">{copy.host.clipMissing}</p>}
+          {!player.hasFile && <p className="clip-missing">{copy.clip.missing}</p>}
         </div>
       ) : (
         <QuestionPhoto question={question} variant="presenter" />

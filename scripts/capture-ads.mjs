@@ -43,7 +43,6 @@ const MONEY_SOURCE = '(?:kr\\.?\\s*\\d[\\d\\s\\u00a0.,]*)|(?:\\d[\\d\\s\\u00a0.]
 const MONEY = new RegExp(MONEY_SOURCE, 'i');
 
 const ADS = [
-  ['pris-01-hytte', 'https://www.finn.no/realestate/leisuresale/ad.html?finnkode=454063859'],
   ['pris-02-traktor', 'https://www.finn.no/mobility/item/472181593'],
   ['pris-03-bunad', 'https://www.finn.no/recommerce/forsale/item/455740691'],
   ['pris-04-spikertelt', 'https://www.finn.no/recommerce/forsale/item/464066904'],

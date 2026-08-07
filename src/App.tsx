@@ -48,7 +48,7 @@ export function App() {
   return (
     <div className="app">
       {screen === 'start' && <StartScreen state={state} dispatch={dispatch} />}
-      {screen === 'quiz' && <QuizScreen state={state} dispatch={dispatch} />}
+      {screen === 'quiz' && <QuizScreen state={state} dispatch={dispatch} player={player} />}
       {screen === 'host' && <HostScreen state={state} dispatch={dispatch} player={player} />}
       {screen === 'hostend' && <HostEndScreen dispatch={dispatch} />}
       {screen === 'waiting' && <WaitingScreen state={state} dispatch={dispatch} />}
@@ -62,7 +62,9 @@ export function App() {
 
       {revealOpen && <RevealOverlay state={state} dispatch={dispatch} player={player} />}
 
-      {state.presenter && clipSrc && (
+      {/* Everyone gets the element now — an online quiz has no shared room to
+          play the clip into, so participants play it themselves. */}
+      {clipSrc && (
         <audio
           ref={player.audioRef}
           src={clipSrc}

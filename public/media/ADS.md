@@ -7,7 +7,6 @@ ingen pris er synlig, og feiler hvis noe lekker.
 Bildene tilhører selgerne. De ligger her for en intern quiz og skal tas ned
 etterpå — ikke la dem bli liggende på en offentlig URL.
 
-- `pris-01-hytte.jpg` — https://www.finn.no/realestate/leisuresale/ad.html?finnkode=454063859
 - `pris-02-traktor.jpg` — https://www.finn.no/mobility/item/472181593
 - `pris-03-bunad.jpg` — https://www.finn.no/recommerce/forsale/item/455740691
 - `pris-04-spikertelt.jpg` — https://www.finn.no/recommerce/forsale/item/464066904

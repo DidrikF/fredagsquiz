@@ -51,10 +51,19 @@ export const copy = {
     codeOk: '✓ Programledermodus er på.',
   },
 
+  /** Shared by the participant, the presenter and the reveal overlay. */
+  clip: {
+    play: '▶ Spill klippet',
+    replay: '↻ Spill igjen',
+    stop: '‖ Stopp klippet',
+    missing: 'Ingen lydfil lagt inn — knappen simulerer avspillingen.',
+  },
+
   quiz: {
     progress: (current: number, total: number) => `Spørsmål ${current} av ${total}`,
     progressLabel: 'Fremdrift',
-    soundNotice: 'Klippet spilles høyt i rommet. Ingen lyd på din telefon.',
+    soundNotice: 'Denne runden er en lyd. Trykk play og hør så mange ganger du vil.',
+    clipHint: 'Sitter dere i samme rom? Bruk hodetelefoner, eller la programlederen spille den høyt.',
     yearLabel: 'Ditt årstall',
     yearSlider: 'Velg årstall',
     yearDown: 'Ett år tidligere',
@@ -70,11 +79,7 @@ export const copy = {
 
   host: {
     tag: 'Programleder',
-    clipPlay: '▶ Spill klippet',
-    clipReplay: '↻ Spill igjen',
-    clipStop: '‖ Stopp klippet',
     clipCaption: 'Spill så mange ganger rommet ber om.',
-    clipMissing: 'Ingen lydfil lagt inn — knappen simulerer avspillingen.',
     reveal: 'Vis fasiten på storskjerm',
     prev: '← Forrige',
     next: 'Neste spørsmål →',

@@ -32,10 +32,15 @@ export function QuestionPhoto({ question, variant }: PhotoProps) {
   );
 }
 
-/** Sound rounds show no media to the participant. That is the point. */
-export function SoundNotice() {
+/**
+ * The participant's own play control. The original design kept sound rounds
+ * media-free — the host played the clip out loud — but a quiz run over a call
+ * has no shared room to play it into, so everyone needs their own button.
+ */
+export function SoundNotice({ player }: { player: ClipPlayer }) {
   return (
     <div className="sound-note">
+      <div className="sound-note-row">
       <div className="sound-note-icon" aria-hidden="true">
         <svg
           width="28"
@@ -52,12 +57,19 @@ export function SoundNotice() {
           <path d="M19 5a9 9 0 0 1 0 14" />
         </svg>
       </div>
-      <p>{copy.quiz.soundNotice}</p>
+        <p>{copy.quiz.soundNotice}</p>
+      </div>
+      <button type="button" className="btn btn-primary btn-play" onClick={player.toggle}>
+        {clipButtonLabel(player)}
+      </button>
+      <p className="text-muted sound-note-hint">
+        {player.hasFile ? copy.quiz.clipHint : copy.clip.missing}
+      </p>
     </div>
   );
 }
 
 export function clipButtonLabel(player: ClipPlayer): string {
-  if (player.playing) return copy.host.clipStop;
-  return player.hasPlayed ? copy.host.clipReplay : copy.host.clipPlay;
+  if (player.playing) return copy.clip.stop;
+  return player.hasPlayed ? copy.clip.replay : copy.clip.play;
 }

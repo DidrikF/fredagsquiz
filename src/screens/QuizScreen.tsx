@@ -5,6 +5,7 @@ import { QuestionPhoto, SoundNotice } from '../components/QuestionMedia';
 import { copy } from '../copy';
 import type { PriceQuestion, SoundQuestion, YearQuestion } from '../data/questions';
 import { QUESTION_COUNT, questionAt } from '../data/questions';
+import type { ClipPlayer } from '../lib/useClipPlayer';
 import type { QuizAction, QuizState } from '../state/quizState';
 import { isAdvanceDisabled, yearValue } from '../state/quizState';
 
@@ -13,9 +14,10 @@ const LETTERS = ['A', 'B', 'C', 'D'];
 interface Props {
   state: QuizState;
   dispatch: Dispatch<QuizAction>;
+  player: ClipPlayer;
 }
 
-export function QuizScreen({ state, dispatch }: Props) {
+export function QuizScreen({ state, dispatch, player }: Props) {
   const question = questionAt(state.idx);
   const isLast = state.idx + 1 >= QUESTION_COUNT;
 
@@ -30,7 +32,7 @@ export function QuizScreen({ state, dispatch }: Props) {
       <h2 className="q-prompt">{question.prompt}</h2>
 
       {question.kind === 'sound' ? (
-        <SoundNotice />
+        <SoundNotice player={player} />
       ) : (
         <QuestionPhoto question={question} variant="participant" />
       )}

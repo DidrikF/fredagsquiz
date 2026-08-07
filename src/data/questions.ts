@@ -1,9 +1,8 @@
 import { clamp } from '../lib/format';
 
 /*
- * The whole quiz lives in this file. Thirty candidates — ten of each kind,
- * alternating year → price → sound — so the whole set can be reviewed on a
- * screen before the final nine are picked. Delete the ones you don't want and
+ * The whole quiz lives in this file. Twenty-two questions, picked from the
+ * thirty researched candidates in docs/kandidater.md. Delete more and
  * everything downstream follows: the maximum score is `QUESTIONS.length * 100`,
  * and the progress label, emoji strip and Slack summary all recount themselves.
  *
@@ -101,7 +100,6 @@ export const QUESTIONS: readonly Question[] = [
     answer: 1,
     note: 'Håndmelking. Rundt 1,5 liter i minuttet hvis du er god. En melkemaskin tar fire spener samtidig og bryr seg ikke om at du er god.',
   },
-
   {
     kind: 'year',
     prompt: 'Når ble Jarlsberg lansert?',
@@ -112,16 +110,6 @@ export const QUESTIONS: readonly Question[] = [
     answer: 1956,
     note: '1956. Utviklet på Ås, oppkalt etter en ost som døde ut i 1916, og i dag vår største osteeksport.',
     source: 'https://snl.no/jarlsberg_-_ost',
-  },
-  {
-    kind: 'price',
-    prompt: 'Hva var prisantydningen på denne hytta?',
-    photoHint: 'Annonsen for hytta i Leksvik, med alle pristall sladdet.',
-    photo: 'pris-01-hytte.jpg',
-    unitLabel: 'hele hytta',
-    answer: 100000,
-    note: '100 000 kr. Innlagt strøm og vann, peis, utsikt, 1 009 kvadratmeter tomt — og et bud på 150 000 lå allerede inne. Nærmeste butikk er 6,3 km unna.',
-    source: 'https://www.finn.no/realestate/leisuresale/ad.html?finnkode=454063859',
   },
   {
     kind: 'sound',
@@ -137,18 +125,6 @@ export const QUESTIONS: readonly Question[] = [
     answer: 0,
     note: 'Bagasjebåndet. Du har stått ved et hundre ganger og aldri hørt etter en eneste gang.',
   },
-
-  {
-    kind: 'year',
-    prompt: 'Når ble Litago lansert?',
-    photoHint: 'Foto: sjokolademelk. Illustrasjonsfoto.',
-    photo: 'aar-02-litago.jpg',
-    min: 1970,
-    max: 2010,
-    answer: 1994,
-    note: '1994. Lansert som et barnekonsept — så viste det seg at det stort sett var ungdom og voksne som drakk det. Litago er yngre enn de fleste i dette rommet.',
-    source: 'https://www.tine.no/merkevarer/litago/artikler/historien-om-litago',
-  },
   {
     kind: 'price',
     prompt: 'Hva koster denne brukte bunaden på Finn?',
@@ -157,7 +133,7 @@ export const QUESTIONS: readonly Question[] = [
     unitLabel: 'hele bunaden, brukt',
     source: 'https://www.finn.no/recommerce/forsale/item/455740691',
     answer: 102000,
-    note: '102 000 kr. Brukt. Det er to traktorer og litt til, eller en hel hytte i Leksvik med noen tusen til overs.',
+    note: '102 000 kr. Brukt. Det er to traktorer og litt til — eller ei hel fritidshytte, for det lå ei ute i Leksvik til 100 000 samtidig.',
   },
   {
     kind: 'sound',
@@ -173,7 +149,6 @@ export const QUESTIONS: readonly Question[] = [
     answer: 1,
     note: 'En melkemaskin. Pulseringen etterligner kalvens rytme — det er derfor den lyder som noe som puster.',
   },
-
   {
     kind: 'year',
     prompt: 'Når ble TINE tatt i bruk som navn på meierisamvirket?',
@@ -193,7 +168,7 @@ export const QUESTIONS: readonly Question[] = [
     unitLabel: 'vogn og telt samlet',
     source: 'https://www.finn.no/recommerce/forsale/item/464066904',
     answer: 420000,
-    note: '420 000 kr. Hytta i Leksvik — 62 kvadratmeter, innlagt vann og strøm, peis og utsikt — lå ute til 100 000. Det er fire spikertelt per hytte.',
+    note: '420 000 kr for vogn og telt. Samtidig lå ei hytte på 62 kvadratmeter i Leksvik ute til 100 000 — med innlagt vann, strøm, peis og utsikt. Det er fire spikertelt per hytte.',
   },
   {
     kind: 'sound',
@@ -204,7 +179,6 @@ export const QUESTIONS: readonly Question[] = [
     answer: 0,
     note: 'En rulletrapp. Du kjører en hver uke og kunne ikke beskrevet lyden om livet stod på spill.',
   },
-
   {
     kind: 'year',
     prompt: 'Når ble Grandiosa lansert?',
@@ -226,21 +200,6 @@ export const QUESTIONS: readonly Question[] = [
     answer: 250000,
     note: '250 000 kr brukt. En ny koster godt over millionen. Det lå en til ute på 450 000 samtidig.',
   },
-  {
-    kind: 'sound',
-    prompt: 'Hva hørte du?',
-    clipName: 'lyd-05-oppskjaermaskin.mp3',
-    clip: 'lyd-05-oppskjaermaskin.mp3',
-    options: [
-      'En oppskjærmaskin hos slakteren',
-      'En brødrister',
-      'En kopimaskin',
-      'En elektrisk hekksaks',
-    ],
-    answer: 0,
-    note: 'Oppskjærmaskinen. Du har stått i kø bak den i tjue år uten å tenke over det.',
-  },
-
   {
     kind: 'year',
     prompt: 'Når startet produksjonen av potetgull i Norge?',
@@ -276,18 +235,6 @@ export const QUESTIONS: readonly Question[] = [
     answer: 1,
     note: 'En gammel enstempers båtmotor — glødehode, eller semidiesel. Du varmet opp toppen med blåselampe før start, og så gikk den til den gikk tom. Den lyden var Norskekysten i femti år.',
   },
-
-  {
-    kind: 'year',
-    prompt: 'Når ble Elopak grunnlagt?',
-    photoHint: 'Foto: melkekartonger i butikkhylle. Illustrasjonsfoto.',
-    photo: 'aar-07-elopak.jpg',
-    min: 1935,
-    max: 1985,
-    answer: 1957,
-    note: '1957. Norsk selskap, amerikansk lisens — Pure-Pak, patentert helt tilbake i 1915. Melka di ligger i en 70 år gammel idé.',
-    source: 'https://snl.no/Elopak_ASA',
-  },
   {
     kind: 'price',
     prompt: 'Hva koster denne brukte Stressless-hjørnesofaen?',
@@ -296,32 +243,7 @@ export const QUESTIONS: readonly Question[] = [
     unitLabel: 'hele sofaen',
     source: 'https://www.finn.no/recommerce/forsale/item/468262052',
     answer: 75000,
-    note: '75 000 kr. Samme merke som de to stolene til 2 000 kr lenger bak i quizen. Det er 37 stolpar per sofa.',
-  },
-  {
-    kind: 'sound',
-    prompt: 'Hva hørte du?',
-    clipName: 'lyd-07-gulvvasker.mp3',
-    clip: 'lyd-07-gulvvasker.mp3',
-    options: [
-      'En gulvvaskemaskin på et kjøpesenter',
-      'En støvsuger',
-      'En gressklipper',
-      'En snøfreser',
-    ],
-    answer: 0,
-    note: 'Gulvvaskemaskinen. Den du alltid må gå rundt på kjøpesenteret, og som du aldri har sett ordentlig på.',
-  },
-
-  {
-    kind: 'year',
-    prompt: 'Når startet osteproduksjonen på Nittedal Meieri — osten som ble Norvegia?',
-    photoHint: 'Norsk Gouda, senere Norvegia. Uten bilde — vi fant ingen fritt lisensiert.',
-    min: 1820,
-    max: 1920,
-    answer: 1859,
-    note: '1859. Hollenderne lærte oss håndverket, men fettinnholdet holdt ikke hollandsk mål — derfor heter den Norvegia og ikke gouda.',
-    source: 'https://www.tine.no/merkevarer/norvegia/artikler/historien-om-norvegia',
+    note: '75 000 kr. Samme merke som de to stolene til 2 000 kr tidligere i quizen. Det er 37 stolpar per sofa.',
   },
   {
     kind: 'price',
@@ -333,21 +255,6 @@ export const QUESTIONS: readonly Question[] = [
     answer: 3000,
     note: '3 000 kr. Det lå åtte av dem ute samtidig, fra 3 000 til 8 000. Markedet for utstoppet elg er større enn du trodde, og prisen lavere.',
   },
-  {
-    kind: 'sound',
-    prompt: 'Hva hørte du?',
-    clipName: 'lyd-08-eltemaskin.mp3',
-    clip: 'lyd-08-eltemaskin.mp3',
-    options: [
-      'En eltemaskin hos bakeren',
-      'En sementblander',
-      'En oppvaskmaskin',
-      'En vaskemaskin med skjev last',
-    ],
-    answer: 0,
-    note: 'Eltemaskinen hos bakeren. Deig i spiralmikser lyder nesten nøyaktig som betong, og det er ingen trøst for noen av dem.',
-  },
-
   {
     kind: 'year',
     prompt: 'Når ble dette bildet tatt?',
@@ -365,7 +272,7 @@ export const QUESTIONS: readonly Question[] = [
     photo: 'pris-09-mikrohus.jpg',
     unitLabel: 'hele huset',
     answer: 600000,
-    note: '600 000 kr for 18 kvadratmeter på hjul. Hytta i Leksvik er 62 kvadratmeter med innlagt vann, strøm og utsikt, og kostet en sjettedel.',
+    note: '600 000 kr for 18 kvadratmeter på hjul. Ei hytte på 62 kvadratmeter i Leksvik, med innlagt vann, strøm og utsikt, lå ute til en sjettedel av det.',
     source: 'https://www.finn.no/recommerce/forsale/item/410676404',
   },
   {
@@ -377,7 +284,6 @@ export const QUESTIONS: readonly Question[] = [
     answer: 0,
     note: 'Et kassaapparat. Alle fire piper likt, og det er nettopp derfor det er vanskelig.',
   },
-
   {
     kind: 'year',
     prompt: 'Omtrent når var glassflaskene borte fra norske melkeruter?',
@@ -397,20 +303,6 @@ export const QUESTIONS: readonly Question[] = [
     source: 'https://www.finn.no/recommerce/forsale/item/364986784',
     answer: 15000,
     note: '15 000 kr slik annonsen stod. Sjekk om det er per kalv eller for hele slengen før du bruker spørsmålet — annonseteksten er tvetydig.',
-  },
-  {
-    kind: 'sound',
-    prompt: 'Hva hørte du?',
-    clipName: 'lyd-10-vaskeanlegg.mp3',
-    clip: 'lyd-10-vaskeanlegg.mp3',
-    options: [
-      'En oppvaskmaskin på et storkjøkken',
-      'Vaskeanlegget som spyler melkeanlegget rent',
-      'En kaffemaskin som renser seg',
-      'En vaskemaskin på sentrifuge',
-    ],
-    answer: 1,
-    note: 'Vaskeanlegget som spyler melkeanlegget rent. Det går etter hver eneste melking, hver eneste dag, i hele landet — og ingen av dere visste hvordan det hørtes ut.',
   },
 ];
 

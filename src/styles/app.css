@@ -153,12 +153,15 @@ body {
 
 .sound-note {
   display: flex;
-  align-items: center;
-  gap: 16px;
+  flex-direction: column;
+  gap: 14px;
   padding: 20px;
   border-radius: 28px;
   background: var(--color-accent-2-100);
 }
+.sound-note-row { display: flex; align-items: center; gap: 16px; }
+.sound-note .btn.btn-play { min-height: 60px; font-size: 20px; width: 100%; }
+.sound-note-hint { margin: 0; font-size: 14px; font-weight: 600; line-height: 1.4; }
 .sound-note-icon {
   width: 56px;
   height: 56px;

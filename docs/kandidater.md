@@ -304,14 +304,25 @@ before you lock the ladder; expect to move at least one.
 
 Milk hitting a metal pail, in rhythm. Everyone knows what hand milking is.
 
-The first option set was `['Regn på et blikktak', 'Håndmelking av ei ku',
-'Noen som vasker opp', 'En kaffetrakter som brygger']` — four different
-acoustic worlds, and the milk one is the obvious answer in a quiz run inside a
-dairy. The question was decided before anyone pressed play. Both problems are
-the same problem: an option set is only as hard as its nearest miss.
+This one took three attempts to make hard, because the first two were written
+from the idea of the sound rather than the sound. **Measure the clip before
+writing the options.** This one runs at about two pulses a second, 19.5 dB of
+dynamic range, and a spectral centroid near 6 kHz — a *bright rasp*, not the
+deep metallic ping you picture when you picture milking.
+
+Both rejected sets died on that number. `['Regn på et blikktak', ...,
+'Noen som vasker opp', 'En kaffetrakter som brygger']` put four different
+acoustic worlds side by side; `['Melkeskummeren på en kaffemaskin', ...,
+'En sykkelpumpe', 'Noen som fyller en bøtte fra en kran']` looked like it
+matched on rhythm, but a frother and a running tap are continuous and a
+bicycle pump is low and thumpy. Either way the answer was the only candidate,
+and in a quiz run inside a dairy it was the one people would pick anyway.
+
+An option set is only as hard as its nearest miss. To get one, put every
+option in the same frequency band and at the same pulse rate as the clip.
 
 > [WWS_Handmilking.ogg](https://upload.wikimedia.org/wikipedia/commons/9/91/WWS_Handmilking.ogg)
-> **options:** `['Melkeskummeren på en kaffemaskin', 'Håndmelking av ei ku', 'En sykkelpumpe', 'Noen som fyller en bøtte fra en kran']` → **1**
+> **options:** `['Noen som pusser med sandpapir', 'Håndmelking av ei ku', 'Noen som sager med en håndsag', 'Noen som river ost på et rivjern']` → **1**
 > **note:** «Håndmelking. Rundt 1,5 liter i minuttet hvis du er god. En melkemaskin tar fire spener samtidig og bryr seg ikke om at du er god.»
 
 ### 2. Bagasjebåndet på flyplassen ✅ — CC BY 4.0 · 60 s · snitt −20 dB

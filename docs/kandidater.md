@@ -302,11 +302,16 @@ before you lock the ladder; expect to move at least one.
 
 ### 1. Håndmelking ✅ — CC BY 4.0 · 75 s · snitt −34 dB
 
-Milk hitting a metal pail, in rhythm. Everyone knows what hand milking is, and
-it's the only one of the four options that could make that particular sound.
+Milk hitting a metal pail, in rhythm. Everyone knows what hand milking is.
+
+The first option set was `['Regn på et blikktak', 'Håndmelking av ei ku',
+'Noen som vasker opp', 'En kaffetrakter som brygger']` — four different
+acoustic worlds, and the milk one is the obvious answer in a quiz run inside a
+dairy. The question was decided before anyone pressed play. Both problems are
+the same problem: an option set is only as hard as its nearest miss.
 
 > [WWS_Handmilking.ogg](https://upload.wikimedia.org/wikipedia/commons/9/91/WWS_Handmilking.ogg)
-> **options:** `['Regn på et blikktak', 'Håndmelking av ei ku', 'Noen som vasker opp', 'En kaffetrakter som brygger']` → **1**
+> **options:** `['Melkeskummeren på en kaffemaskin', 'Håndmelking av ei ku', 'En sykkelpumpe', 'Noen som fyller en bøtte fra en kran']` → **1**
 > **note:** «Håndmelking. Rundt 1,5 liter i minuttet hvis du er god. En melkemaskin tar fire spener samtidig og bryr seg ikke om at du er god.»
 
 ### 2. Bagasjebåndet på flyplassen ✅ — CC BY 4.0 · 60 s · snitt −20 dB
